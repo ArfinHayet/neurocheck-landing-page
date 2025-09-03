@@ -106,9 +106,42 @@ const FlexiblePricing = () => {
           </p>
         </div>
       </div>
+      
+{/* Mobile layout */}
+<div className="flex flex-col gap-8 lg:hidden items-center">
+  {/* Image first */}
+  <div className="flex justify-center">
+    <Image
+      src={pricingImg}
+      alt="Pricing illustration"
+      width={400}
+      height={400}
+      className="object-cover rounded-lg"
+    />
+  </div>
+
+  {/* Pricing cards */}
+  <div className="flex flex-col gap-4 w-full">
+    {pricingPlans.map((plan, index) => (
+      <div
+        key={index}
+        className="border rounded-xl px-6 py-4"
+      >
+        <div className="flex justify-between items-center">
+          <h3 className="font-semibold">{plan.title}</h3>
+          <span className="font-semibold text-2xl text-primary">
+            <span className="text-primary text-lg">£</span>
+            {plan.price}
+          </span>
+        </div>
+        <p className="text-gray-500 mt-2">{plan.description}</p>
+      </div>
+    ))}
+  </div>
+</div>
 
       {/* Desktop layout */}
-      <div className="hidden lg:flex flex-col lg:flex-row items-center justify-between">
+      <div className="hidden md:flex flex-col lg:flex-row items-center justify-between">
         {/* Left side animated cards */}
         <div className="flex flex-col gap-4 w-full lg:w-[40%]">
           {pricingPlans.map((plan, index) => {
