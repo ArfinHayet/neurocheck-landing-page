@@ -147,13 +147,13 @@ const SuccessStories = () => {
       <div ref={containerRef} className="relative  ">
         <button
           onClick={handlePrev}
-          className="absolute left-0 top-1/2 -translate-y-1/2 bg-white shadow-md rounded-full p-3 z-50 hover:bg-gray-100 mx-10"
+          className="absolute left-0 top-1/2 -translate-y-1/2 bg-white shadow-md rounded-full p-3 z-50 hover:bg-gray-100 mx-2 md:mx-10"
         >
           <IoIosArrowBack size={22}/>
         </button>
         <button
           onClick={handleNext}
-          className="absolute right-0 top-1/2 -translate-y-1/2 bg-white shadow-md  rounded-full p-3 z-50 hover:bg-gray-100 mx-10"
+          className="absolute right-0 top-1/2 -translate-y-1/2 bg-white shadow-md  rounded-full p-3 z-50 hover:bg-gray-100 mx-2 md:mx-10"
         >
           <IoIosArrowForward size={22}/>
         </button>
