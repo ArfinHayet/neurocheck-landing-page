@@ -131,7 +131,7 @@ const FlexiblePricing = () => {
             <div
               key={index}
               onClick={() => handleCardClick(index)}
-              className="border rounded-xl px-4 py-3 cursor-pointer transition-all duration-300 bg-white"
+              className="border border-b-2 rounded-xl px-4 py-3 cursor-pointer transition-all duration-300 "
             >
               <div className="flex justify-between items-center">
                 <h3 className="font-semibold text-sm md:text-base">{plan.title}</h3>
