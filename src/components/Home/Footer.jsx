@@ -81,7 +81,7 @@ const Footer = () => {
           <h4 className="text-base md:text-xl font-semibold ">Useful Links</h4>
           <hr className="border-gray-400 w-12 my-3  md:my-6" />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-6">
-            <div className="space-y-3 text-xs">
+            <div className="space-y-3 text-xs md:text-base">
               {firstColumn.map(({ label, id }) => (
                 <button
                   key={id}
@@ -92,7 +92,7 @@ const Footer = () => {
                 </button>
               ))}
             </div>
-            <div className="space-y-3 text-xs">
+            <div className="space-y-3 ext-xs md:text-base">
               {secondColumn.map(({ label, id }) => (
                 <button
                   key={id}
@@ -110,7 +110,7 @@ const Footer = () => {
         <div>
           <h4 className="text-base md:text-xl font-semibold ">Other Links</h4>
           <hr className="border-gray-400 w-12 my-3 md:mb-6" />
-          <div className="space-y-3 text-xs">
+          <div className="space-y-3 ext-xs md:text-base">
             {otherLinks.map((link, index) => (
               <Link
                 key={index}
