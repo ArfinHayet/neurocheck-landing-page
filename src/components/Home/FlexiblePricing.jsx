@@ -115,7 +115,14 @@ const FlexiblePricing = () => {
       {/* Mobile layout */}
       <div className="flex flex-col gap-8 lg:hidden">
         {/* Image first */}
-        <div className="flex justify-center">
+         <Image
+            src={c2}
+            height={800}
+            width={800}
+            className="h-[100px] w-[100px] bg-transparent ml-4"
+            alt="curve"
+          />
+        <div className="flex justify-center -mt-[25%]">
           <Image
             src={pricingImg}
             alt="Pricing illustration"
@@ -166,13 +173,11 @@ const FlexiblePricing = () => {
         {/* Left side animated cards */}
         <div className="flex flex-col gap-4 w-full lg:w-[40%]">
           {pricingPlans.map((plan, index) => {
-            // Use useInView for each individual card
             const [ref, inView] = useInView({
               triggerOnce: true,
               threshold: 0.1,
               rootMargin: "-50px 0px",
             });
-            
             return (
               <motion.div
                 key={index}

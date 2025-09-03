@@ -17,7 +17,6 @@ const Hero = () => {
   const [isHovered, setIsHovered] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
-  // Check if device is mobile
   useEffect(() => {
     const checkIsMobile = () => {
       setIsMobile(window.innerWidth < 768);
@@ -48,26 +47,29 @@ const Hero = () => {
     }
   };
 
-  //  positions for each card
+  // Adjusted positions for better mobile visibility
   const cardPositions = {
     advantages: {
-      mobile: { top: "105%", left: 0 },
+      mobile: { top: "95%", left: "-5%", transform: "translateX(-50%)" },
       desktop: { top: "85%", left: "-2.5rem" }
     },
     rating: {
-      mobile: { bottom: "115%", right: 0 },
-      desktop: { bottom: "3rem", right: "0rem" }
-    },
+  mobile: { top: "50%", right: "-5%" },
+  desktop: { bottom: "70%", right: "1%" } 
+},
     care: {
-      mobile: { top: "-20%", left: "50%", transform: "translateX(-50%)" },
-      desktop: { top: "1.75rem", left: "40%" }
+      mobile: { top: "-15%", left: "-5%", transform: "translateX(-50%)" },
+      desktop: { top: "1rem", left: "40%" }
     }
   };
 
   return (
     <section
       id="home"
-      className="md:pt-[17vh] pt-14 pb-10 md:pb-20 min-h-screen max-w-screen mx-auto px-4 md:px-14 overflow-hidden relative"
+      className="pt-14 pb-28 md:pt-[16vh] md:pb-20 
+                 max-w-screen mx-auto px-4 md:px-14 
+                 overflow-hidden relative 
+                 min-h-[150vh] md:min-h-screen lg:min-h-screen"
       onMouseEnter={() => setIsHovered(true)}
     >
       {/* Background Blurs */}
@@ -143,9 +145,9 @@ const Hero = () => {
         </div>
 
         {/* Right Side */}
-        <div className="relative flex-1 flex justify-center items-center mt-8 md:mt-0">
+        <div className="relative flex-1 flex justify-center items-center mt-8 md:mt-0 min-h-[50vh] md:min-h-0">
           {/* Orbits - Hidden on mobile */}
-          <div className="absolute -z-10 -right-2/5 top-3/5 -translate-y-1/2 w-full max-w-[800px] aspect-square  justify-center items-center">
+          <div className="absolute -z-10 -right-2/5 top-3/5 -translate-y-1/2 w-full max-w-[800px] aspect-square hidden md:flex justify-center items-center">
             <div className="w-full h-full border border-white rounded-full relative">
               <div className="w-6 h-6 border-2 border-white shadow-lg shadow-[#114654] bg-primary rounded-full absolute top-[-1%] left-[55%]" />
             </div>
@@ -167,51 +169,56 @@ const Hero = () => {
               className="object-cover md:pt-12 rounded-2xl relative z-20 max-w-xs md:max-w-md lg:max-w-xl"
             />
 
-            {/* Cards  */}
+            {/* Floating Cards - Always visible on mobile */}
             <div>
-              {/* advantage */}
+              {/* Advantages Card */}
               <motion.div
-                className="absolute bg-white shadow-lg rounded-xl w-fit z-20"
+                className="absolute bg-white shadow-lg rounded-xl z-30 "
                 style={{
                   top: isMobile ? cardPositions.advantages.mobile.top : cardPositions.advantages.desktop.top,
                   left: isMobile ? cardPositions.advantages.mobile.left : cardPositions.advantages.desktop.left,
+                  transform: isMobile ? cardPositions.advantages.mobile.transform : "none",
+                  width: isMobile ? "90%" : "auto",
+                  maxWidth: isMobile ? "240px" : "none"
                 }}
                 variants={cardVariants}
                 initial="hidden"
-                animate={isHovered ? "visible" : "hidden"}
+                animate={isHovered || isMobile ? "visible" : "hidden"}
                 transition={{ delay: 0.1 }}
               >
-                <div className="w-full h-12 md:h-14 flex items-center justify-center shadow-md shadow-gray-200">
-                  <p className="text-lg md:text-xl font-semibold text-secondary">
+                <div className="w-full h-10 md:h-14 flex items-center justify-center shadow-md shadow-gray-200">
+                  <p className="text-base md:text-xl font-semibold text-secondary">
                     Advantages
                   </p>
                 </div>
                 <ul className="space-y-2 p-3 md:p-4">
                   <li className="flex gap-2 md:gap-3 items-center text-sm md:text-base">
                     <HiShieldCheck color="#0DA43F" size={18} />
-                    <span>Affordable & Transparent pricing</span>
+                    <span className="text-xs md:text-base">Affordable & Transparent pricing</span>
                   </li>
                   <li className="flex gap-2 md:gap-3 items-center text-sm md:text-base">
                     <HiShieldCheck color="#0DA43F" size={18} />
-                    <span>Parent–Clinician Connection</span>
+                    <span className="text-xs md:text-base">Parent–Clinician Connection</span>
                   </li>
                   <li className="flex gap-2 md:gap-3 items-center text-sm md:text-base">
                     <HiShieldCheck color="#0DA43F" size={18} />
-                    <span>Clinically Informed, AI-Assisted</span>
+                    <span className="text-xs md:text-base">Clinically Informed, AI-Assisted</span>
                   </li>
                 </ul>
               </motion.div>
 
-{/* rating */}
+              {/* Rating Card */}
               <motion.div
-                className="absolute bg-white shadow-lg rounded-xl py-2 px-4 md:py-3 md:px-8 z-20 max-w-fit"
+                className="absolute bg-white shadow-lg rounded-xl py-2 px-4 md:py-3 md:px-8 z-30"
                 style={{
-                  bottom: isMobile ? cardPositions.rating.mobile.bottom : cardPositions.rating.desktop.bottom,
+                  top: isMobile ? cardPositions.rating.mobile.top : cardPositions.rating.desktop.bottom,
                   right: isMobile ? cardPositions.rating.mobile.right : cardPositions.rating.desktop.right,
+                  width: isMobile ? "auto" : "auto",
+                  minWidth: isMobile ? "140px" : "auto"
                 }}
                 variants={cardVariants}
                 initial="hidden"
-                animate={isHovered ? "visible" : "hidden"}
+                animate={isHovered || isMobile ? "visible" : "hidden"}
                 transition={{ delay: 0.2 }}
               >
                 <div className="flex gap-1 text-yellow-400 pb-1 text-sm md:text-lg">
@@ -219,25 +226,26 @@ const Hero = () => {
                     <FaStar key={i} size={14} />
                   ))}
                 </div>
-                <p className="text-gray-600 text-sm md:text-lg">Secure & Confidential</p>
+                <p className="text-gray-600 text-xs md:text-lg">Secure & Confidential</p>
               </motion.div>
 
               {/* Personalised Care Card */}
               <motion.div
-                className="absolute bg-white shadow-lg rounded-xl p-2 md:p-3 w-48 md:w-56 z-20 flex justify-center items-center gap-2 md:gap-4"
+                className="absolute bg-white shadow-lg rounded-xl p-2 md:p-3 z-30 flex justify-center items-center gap-2 md:gap-4 max-w-[50%] md:max-w-[35%]"
                 style={{
                   top: isMobile ? cardPositions.care.mobile.top : cardPositions.care.desktop.top,
                   left: isMobile ? cardPositions.care.mobile.left : cardPositions.care.desktop.left,
-                  transform: isMobile ? cardPositions.care.mobile.transform : "none"
+                  transform: isMobile ? cardPositions.care.mobile.transform : "none",
+                  width: isMobile ? "200px" : "auto"
                 }}
                 variants={cardVariants}
                 initial="hidden"
-                animate={isHovered ? "visible" : "hidden"}
+                animate={isHovered || isMobile ? "visible" : "hidden"}
                 transition={{ delay: 0.3 }}
               >
                 <Image src={p6} height={32} width={32} className="h-8 w-8 md:h-10 md:w-10" />
-                <p className="text-secondary text-sm md:text-lg">
-                  Personalised Care
+                <p className="text-secondary text-xs md:text-lg ">
+                  Personalised Care Pathways
                 </p>
               </motion.div>
             </div>
