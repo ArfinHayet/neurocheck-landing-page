@@ -1,5 +1,6 @@
 "use client";
 import React, { useRef, useEffect, useState } from "react";
+import { motion } from "framer-motion";
 import c1 from "../../../public/png/curve.png";
 import Image from "next/image";
 import { howItWorksSteps } from "@/lib/data";
@@ -46,10 +47,17 @@ const HowItWorks = () => {
 
       {/* Layout */}
       <div className="flex flex-col lg:flex-row justify-between gap-8 md:gap-14">
-        {/* Left */}
-        <div className="flex-1 sticky md:top-20 bg-[#FFE2F7] rounded-xl w-full order-1 lg:order-none">
+        {/* Left side - animated */}
+        <motion.div
+          initial={{ x: -100, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          viewport={{ once: true, amount: 0.3 }}
+          whileHover={{ scale: 1.02 }}
+          transition={{ type: "spring", stiffness: 70, damping: 20 }}
+          className="flex-1 sticky md:top-20 bg-[#FFE2F7] rounded-xl w-full order-1 lg:order-none"
+        >
           <div className="flex justify-between items-start">
-            <div className=" rounded-full border border-[#849DAE] md:m-6 m-3  py-2 px-6 w-fit h-full mb-4 md:mb-6">
+            <div className="rounded-full border border-[#849DAE] md:m-6 m-3 py-2 px-6 w-fit h-full mb-4 md:mb-6">
               <p className="text-base md:text-lg font-medium">5 Quick Steps</p>
             </div>
             <Image
@@ -64,10 +72,10 @@ const HowItWorks = () => {
             Your path <br />
             to <span className="font-semibold italic">Wellness</span>
           </p>
-        </div>
+        </motion.div>
 
-        {/* Right */}
-        <div className="relative  order-2 lg:order-none">
+        {/* Right side */}
+        <div className="relative order-2 lg:order-none">
           <div
             ref={listContainerRef}
             className="max-h-[380px] sm:max-h-[420px] md:max-h-[500px] overflow-y-auto pr-2 md:pr-4 space-y-6 sm:space-y-8 md:space-y-12 pt-4 sm:pt-6 md:pt-10 hide-scrollbar"

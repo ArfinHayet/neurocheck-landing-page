@@ -1,9 +1,9 @@
 "use client";
-
 import { Accordion, AccordionItem } from "@szhsin/react-accordion";
 import { FiPlus } from "react-icons/fi";
 import f1 from "../../../public/png/faqicon.png";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 const faqData = [
   {
@@ -51,26 +51,37 @@ const FAQ = () => {
       className="relative py-12 md:py-20 mt-4 max-w-screen mx-auto px-4 md:px-8 lg:px-14"
     >
       <div className="grid grid-cols-1 md:grid-cols-5 items-start gap-12 md:gap-16 lg:gap-20">
-        {/* Left side */}
-        <div className="relative order-1 md:order-1 md:col-span-2">
+        {/* Left side - slide from left */}
+        <motion.div
+          className="relative order-1 md:order-1 md:col-span-2"
+          initial={{ x: -100, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ type: "spring", stiffness: 70, damping: 20 }}
+        >
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
             Your <span className="text-secondary">Questions<br />Answered</span> About Us
           </h1>
-      
-         <div className=" md:mt-12 lg:mt-16 relative w-full h-64 md:h-80 lg:h-96 xl:h-[28rem] -ml-10 md:-ml-16 lg:-ml-[35%]">
-  <Image
-    src={f1}
-    alt="FAQ Illustration"
-    fill
-    className="object-contain "
-    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-  />
-</div>
 
-        </div>
+          <div className="md:mt-12 lg:mt-16 relative w-full h-64 md:h-80 lg:h-96 xl:h-[28rem] -ml-10 md:-ml-16 lg:-ml-[35%]">
+            <Image
+              src={f1}
+              alt="FAQ Illustration"
+              fill
+              className="object-contain"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            />
+          </div>
+        </motion.div>
 
-        {/* Right side */}
-        <div className="md:col-span-3 order-2 md:order-2">
+        {/* Right side - slide from right */}
+        <motion.div
+          className="md:col-span-3 order-2 md:order-2"
+          initial={{ x: 100, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ type: "spring", stiffness: 70, damping: 20 }}
+        >
           <Accordion
             transition
             transitionTimeout={600}
@@ -100,10 +111,11 @@ const FAQ = () => {
               </AccordionItem>
             ))}
           </Accordion>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
 };
 
 export default FAQ;
+
