@@ -143,7 +143,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="h-px bg-gray-500 mb-6 mx-4 md:mx-14 lg:mx-18"></div>
+      <div className="h-px bg-gray-500 mb-6 "></div>
 
       <div className="px-4 md:px-14 lg:px-18 flex flex-col  justify-center items-center gap-3  text-center">
         <p className="flex gap-2 items-center text-sm">

@@ -57,15 +57,16 @@ const FAQ = () => {
             Your <span className="text-secondary">Questions<br />Answered</span> About Us
           </h1>
       
-          <div className="mt-8 md:mt-12 lg:mt-16 relative w-full h-48 md:h-56 lg:h-72">
-            <Image
-              src={f1}
-              alt="FAQ Illustration"
-              fill
-              className="object-contain md:-ml-20 lg:-ml-32"
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-            />
-          </div>
+         <div className=" md:mt-12 lg:mt-16 relative w-full h-64 md:h-80 lg:h-96 xl:h-[28rem] -ml-10 md:-ml-16 lg:-ml-[35%]">
+  <Image
+    src={f1}
+    alt="FAQ Illustration"
+    fill
+    className="object-contain "
+    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+  />
+</div>
+
         </div>
 
         {/* Right side */}

@@ -5,7 +5,7 @@ import c2 from "../../../public/png/image 9.png";
 
 export default function ExpertClinicians() {
   return (
-    <section className="relative max-w-screen mx-auto py-10 md:py-12 lg:py-20 px-4 md:px-8 lg:px-14 flex flex-col items-center bg-gradient-to-b from-[#114654] to-[#0C738E] overflow-hidden h-[65vh] sm:h-[80vh] md:min-h-[100vh]">
+    <section className="relative max-w-screen mx-auto py-10 md:py-12 lg:py-20 px-4 md:px-8 lg:px-14 flex flex-col items-center bg-gradient-to-b from-[#114654] to-[#0C738E] overflow-hidden h-[65vh] sm:h-[80vh] md:min-h-screen">
       {/* Header */}
       <div className="text-center mb-4 md:mb-6 lg:mb-10 max-w-3xl">
         <h2 className="text-2xl md:text-3xl lg:text-5xl font-semibold text-white mb-3 md:mb-4">
@@ -18,7 +18,7 @@ export default function ExpertClinicians() {
       </div>
 
       {/* Solar System */}
-      <div className="relative w-full max-w-4xl aspect-square flex items-center justify-center -top-16 md:top-8">
+      <div className="relative w-full max-w-4xl aspect-square flex items-center justify-center -top-16 md:top-6 lg:top-1">
        {/* Orbit Container */}
 <div className="absolute left-1/2 -translate-x-1/2 w-full max-w-4xl h-full flex justify-center items-center overflow-hidden">
   <div className="relative min-w-[360px] md:w-[500px] lg:w-[700px] aspect-square flex justify-center items-center">
@@ -99,8 +99,7 @@ export default function ExpertClinicians() {
               className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 lg:w-10 lg:h-10"
             />
             <div>
-              <p className="text-xs sm:text-sm font-semibold text-gray-800">Registered ADHD</p>
-              <p className="text-xs sm:text-sm font-semibold text-gray-800">Specialist (RADS)</p>
+              <p className="text-xs sm:text-sm font-semibold text-gray-800">Registered ADHD Specialist (RADS)</p>
             </div>
           </div>
         </div>
