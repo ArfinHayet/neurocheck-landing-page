@@ -1,7 +1,8 @@
 "use client";
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 import pricingImg from "../../../public/png/pricing.png";
 import c2 from "../../../public/png/curve1.png";
 
@@ -43,100 +44,149 @@ const pricingPlans = [
       "Comprehensive adult assessment to identify both autism and ADHD, offering clarity and guidance for support strategies.",
   },
 ];
+
+// Expandable animation for descriptions
 const Expandable = ({ isOpen, children }) => {
   const ref = useRef(null);
-  const [height, setHeight] = useState(0);
-
-  useEffect(() => {
-    if (ref.current) {
-      setHeight(ref.current.scrollHeight);
-    }
-  }, [children, isOpen]);
-
   return (
     <AnimatePresence>
       {isOpen && (
         <motion.div
           initial={{ height: 0, opacity: 0 }}
-          animate={{ height, opacity: 1 }}
+          animate={{
+            height: ref.current ? ref.current.scrollHeight : "auto",
+            opacity: 1,
+          }}
           exit={{ height: 0, opacity: 0 }}
           transition={{ duration: 0.3, ease: "easeInOut" }}
           style={{ overflow: "hidden" }}
         >
-          <div ref={ref} className="h-full ">
-            {children}
-          </div>
+          <div ref={ref}>{children}</div>
         </motion.div>
       )}
     </AnimatePresence>
   );
 };
 
+// Animation variants
+const containerVariants = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: { staggerChildren: 0.25, delayChildren: 0.3 },
+  },
+};
+
+const cardVariants = {
+  hidden: { opacity: 0, x: -100 },
+  show: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.6, ease: "easeOut" },
+  },
+};
+
 const FlexiblePricing = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
 
   return (
-    <div className="pt-20 pb-8 gap-10 max-w-screen mx-auto px-4 md:px-18 bg-[#E7EDEE] min-h-screen">
-      <div className="flex flex-col justify-center text-center mb-4">
-        <h2 className="text-5xl font-semibold">
+    <div
+      id="pricing"
+      className="pt-20 pb-20 gap-10 max-w-screen mx-auto px-4 md:px-18 bg-[#E7EDEE] min-h-screen"
+    >
+      <div className="flex flex-col justify-center text-center">
+        <h2 className="text-2xl md:text-5xl font-semibold">
           Flexible <span className="text-gray-500">Pricing Options</span>
         </h2>
-        <div className="flex justify-center mt-6">
-          <p className="text-secondary mb-6  max-w-[800px]">
+        <div className="flex justify-center mt-3 md:mt-6">
+          <p className="text-secondary mb-6 text-sm md:text-lg md:max-w-4xl">
             Explore our flexible pricing plans designed to suit different needs.
             Choose the right plan for you and start using Neurocheckpro to
             streamline neurological assessments effectively.
           </p>
         </div>
       </div>
-      <div className="flex flex-col lg:flex-row items-center justify-between">
+
+      {/* Desktop layout */}
+      <div className="hidden lg:flex flex-col lg:flex-row items-center justify-between">
+        {/* Left side animated cards */}
         <div className="flex flex-col gap-4 w-full lg:w-[40%]">
-          <div className="flex flex-col gap-3 lg:max-w-xl">
-            {pricingPlans.map((plan, index) => (
-              <div
+          {pricingPlans.map((plan, index) => {
+            // Use useInView for each individual card
+            const [ref, inView] = useInView({
+              triggerOnce: true,
+              threshold: 0.1,
+              rootMargin: "-50px 0px", // Adjust when the animation triggers
+            });
+            
+            return (
+              <motion.div
                 key={index}
+                ref={ref}
+                variants={cardVariants}
+                initial="hidden"
+                animate={inView ? "show" : "hidden"}
+                transition={{ delay: index * 0.1 }} // Stagger the animation
+                whileHover={{ scale: 1.02, boxShadow: "0px 4px 15px rgba(0,0,0,0.1)" }}
                 onMouseEnter={() => setHoveredIndex(index)}
                 onMouseLeave={() => setHoveredIndex(null)}
-                className={`h-full border rounded-xl   cursor-pointer transition-all duration-300 ${
+                className={`h-full border rounded-xl cursor-pointer transition-all duration-300 ${
                   hoveredIndex === index
                     ? "border-2 border-b-8 h-fit px-10 py-4"
                     : "px-8 py-4"
                 }`}
               >
-                <div className="flex justify-between  items-center ">
+                <div className="flex justify-between items-center">
                   <h3 className="font-semibold">{plan.title}</h3>
                   <span className="font-semibold text-4xl text-primary">
                     <span className="text-primary text-xl">£</span>
                     {plan.price}
                   </span>
                 </div>
-
                 <Expandable isOpen={hoveredIndex === index && plan.description}>
                   <p className="text-gray-500 mt-2 py-2">{plan.description}</p>
                 </Expandable>
-              </div>
-            ))}
+              </motion.div>
+            );
+          })}
+        </div>
+
+        {/* Right side image */}
+        <div className="mt-10 flex flex-col justify-center">
+          <Image
+            src={c2}
+            height={800}
+            width={800}
+            className="h-[100px] w-[100px] md:h-[160px] md:w-[160px] bg-transparent md:-ml-[18%]"
+            alt="curve"
+          />
+          <div className="-mt-[20%] rounded-lg">
+            {/* Add inView detection for the image too */}
+            {(() => {
+              const [ref, inView] = useInView({
+                triggerOnce: true,
+                threshold: 0.1,
+              });
+              
+              return (
+                <motion.div
+                  ref={ref}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={inView ? { opacity: 1, scale: 1 } : {}}
+                  transition={{ duration: 0.6, delay: 0.6 }}
+                >
+                  <Image
+                    src={pricingImg}
+                    alt="Pricing illustration"
+                    width={600}
+                    height={600}
+                    className="object-cover rounded-lg"
+                  />
+                </motion.div>
+              );
+            })()}
           </div>
         </div>
-        {/* Right side - Image */}
-        <div className=" flex flex-col justify-center">
-       <div className="pt-20">
-           <Image
-          src={c2}
-          height={400}
-          width={400}
-          className="h-[160px] w-[160px] " />
-</div>
-          <div className=" -mt-10 rounded-lg">
-            <Image
-              src={pricingImg}
-              alt="Pricing illustration"
-              width={600}
-              height={600}
-              className="object-cover rounded-lg"
-            />
-          </div>
-        </div>{" "}
       </div>
     </div>
   );
