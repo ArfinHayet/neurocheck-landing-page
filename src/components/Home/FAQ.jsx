@@ -47,9 +47,10 @@ const faqData = [
 const FAQ = () => {
   return (
     <section
-      id="faq"
-      className="relative py-12 md:py-20 mt-4 max-w-screen mx-auto px-4 md:px-8 lg:px-14"
-    >
+  id="faq"
+  className="relative py-12 md:py-20 mt-4 max-w-screen mx-auto px-4 md:px-8 lg:px-14 overflow-x-hidden"
+>
+
       <div className="grid grid-cols-1 md:grid-cols-5 items-start gap-12 md:gap-16 lg:gap-20">
         {/* Left side - slide from left */}
         <motion.div
