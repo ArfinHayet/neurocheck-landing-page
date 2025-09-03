@@ -64,7 +64,7 @@ const HowItWorks = () => {
               src={c1}
               height={400}
               width={400}
-              className="h-[200px] w-[160px] sm:h-[280px] sm:w-[220px] md:h-[300px] md:w-[230px]"
+              className="h-[200px] w-[140px] sm:h-[260px] sm:w-[200px] md:h-[300px] md:w-[230px]"
               alt="Curve"
             />
           </div>

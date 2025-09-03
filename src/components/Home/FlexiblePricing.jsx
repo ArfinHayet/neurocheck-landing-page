@@ -88,14 +88,19 @@ const cardVariants = {
 
 const FlexiblePricing = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
+  const [expandedIndex, setExpandedIndex] = useState(null);
+
+  const handleCardClick = (index) => {
+    setExpandedIndex(expandedIndex === index ? null : index);
+  };
 
   return (
     <div
       id="pricing"
-      className="pt-20 pb-20 gap-10 max-w-screen mx-auto px-4 md:px-18 bg-[#E7EDEE] min-h-screen"
+      className="pt-12 md:pt-20 pb-12 md:pb-20 gap-8 md:gap-10 max-w-screen mx-auto px-4 md:px-18 bg-[#E7EDEE] min-h-screen"
     >
       <div className="flex flex-col justify-center text-center">
-        <h2 className="text-2xl md:text-5xl font-semibold">
+        <h2 className="text-2xl md:text-4xl lg:text-5xl font-semibold">
           Flexible <span className="text-gray-500">Pricing Options</span>
         </h2>
         <div className="flex justify-center mt-3 md:mt-6">
@@ -107,41 +112,57 @@ const FlexiblePricing = () => {
         </div>
       </div>
       
-{/* Mobile layout */}
-<div className="flex flex-col gap-8 lg:hidden items-center">
-  {/* Image first */}
-  <div className="flex justify-center">
-    <Image
-      src={pricingImg}
-      alt="Pricing illustration"
-      width={400}
-      height={400}
-      className="object-cover rounded-lg"
-    />
-  </div>
-
-  {/* Pricing cards */}
-  <div className="flex flex-col gap-4 w-full">
-    {pricingPlans.map((plan, index) => (
-      <div
-        key={index}
-        className="border rounded-xl px-6 py-4"
-      >
-        <div className="flex justify-between items-center">
-          <h3 className="font-semibold">{plan.title}</h3>
-          <span className="font-semibold text-2xl text-primary">
-            <span className="text-primary text-lg">£</span>
-            {plan.price}
-          </span>
+      {/* Mobile layout */}
+      <div className="flex flex-col gap-8 lg:hidden">
+        {/* Image first */}
+        <div className="flex justify-center">
+          <Image
+            src={pricingImg}
+            alt="Pricing illustration"
+            width={300}
+            height={300}
+            className="object-cover rounded-lg w-full max-w-md"
+          />
         </div>
-        <p className="text-gray-500 mt-2">{plan.description}</p>
+
+        {/* Pricing cards with expandable functionality */}
+        <div className="flex flex-col gap-4 w-full">
+          {pricingPlans.map((plan, index) => (
+            <div
+              key={index}
+              onClick={() => handleCardClick(index)}
+              className="border rounded-xl px-4 py-3 cursor-pointer transition-all duration-300 bg-white"
+            >
+              <div className="flex justify-between items-center">
+                <h3 className="font-semibold text-sm md:text-base">{plan.title}</h3>
+                <span className="font-semibold text-xl md:text-2xl text-primary flex items-center">
+                  <span className="text-primary text-base md:text-lg">£</span>
+                  {plan.price}
+                </span>
+              </div>
+              
+              <AnimatePresence>
+                {expandedIndex === index && (
+                  <motion.div
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: "auto", opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.3 }}
+                    className="overflow-hidden"
+                  >
+                    <p className="text-gray-500 mt-2 text-sm md:text-base">
+                      {plan.description}
+                    </p>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+          ))}
+        </div>
       </div>
-    ))}
-  </div>
-</div>
 
       {/* Desktop layout */}
-      <div className="hidden md:flex flex-col lg:flex-row items-center justify-between">
+      <div className="hidden lg:flex flex-col lg:flex-row items-center justify-between">
         {/* Left side animated cards */}
         <div className="flex flex-col gap-4 w-full lg:w-[40%]">
           {pricingPlans.map((plan, index) => {
@@ -149,7 +170,7 @@ const FlexiblePricing = () => {
             const [ref, inView] = useInView({
               triggerOnce: true,
               threshold: 0.1,
-              rootMargin: "-50px 0px", // Adjust when the animation triggers
+              rootMargin: "-50px 0px",
             });
             
             return (
@@ -159,7 +180,7 @@ const FlexiblePricing = () => {
                 variants={cardVariants}
                 initial="hidden"
                 animate={inView ? "show" : "hidden"}
-                transition={{ delay: index * 0.1 }} // Stagger the animation
+                transition={{ delay: index * 0.1 }}
                 whileHover={{ scale: 1.02, boxShadow: "0px 4px 15px rgba(0,0,0,0.1)" }}
                 onMouseEnter={() => setHoveredIndex(index)}
                 onMouseLeave={() => setHoveredIndex(null)}
@@ -194,7 +215,6 @@ const FlexiblePricing = () => {
             alt="curve"
           />
           <div className="-mt-[20%] rounded-lg">
-            {/* Add inView detection for the image too */}
             {(() => {
               const [ref, inView] = useInView({
                 triggerOnce: true,
