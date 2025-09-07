@@ -111,17 +111,16 @@ const FlexiblePricing = () => {
           </p>
         </div>
       </div>
-      
+
       {/* Mobile layout */}
       <div className="flex flex-col gap-8 lg:hidden">
-        {/* Image first */}
-         <Image
-            src={c2}
-            height={800}
-            width={800}
-            className="h-[100px] w-[100px] bg-transparent ml-4"
-            alt="curve"
-          />
+        <Image
+          src={c2}
+          height={800}
+          width={800}
+          className="h-[100px] w-[100px] bg-transparent ml-4"
+          alt="curve"
+        />
         <div className="flex justify-center -mt-[25%]">
           <Image
             src={pricingImg}
@@ -132,7 +131,7 @@ const FlexiblePricing = () => {
           />
         </div>
 
-        {/* Pricing cards with expandable functionality */}
+        {/* Pricing cards expandable  */}
         <div className="flex flex-col gap-4 w-full">
           {pricingPlans.map((plan, index) => (
             <div
@@ -141,13 +140,15 @@ const FlexiblePricing = () => {
               className="border border-b-2 rounded-xl px-4 py-3 cursor-pointer transition-all duration-300 "
             >
               <div className="flex justify-between items-center">
-                <h3 className="font-semibold text-sm md:text-base">{plan.title}</h3>
+                <h3 className="font-semibold text-sm md:text-base">
+                  {plan.title}
+                </h3>
                 <span className="font-semibold text-xl md:text-2xl text-primary flex items-center">
                   <span className="text-primary text-base md:text-lg">£</span>
                   {plan.price}
                 </span>
               </div>
-              
+
               <AnimatePresence>
                 {expandedIndex === index && (
                   <motion.div
@@ -170,7 +171,6 @@ const FlexiblePricing = () => {
 
       {/* Desktop layout */}
       <div className="hidden lg:flex flex-col lg:flex-row items-center justify-between">
-        {/* Left side animated cards */}
         <div className="flex flex-col gap-4 w-full lg:w-[40%]">
           {pricingPlans.map((plan, index) => {
             const [ref, inView] = useInView({
@@ -186,7 +186,10 @@ const FlexiblePricing = () => {
                 initial="hidden"
                 animate={inView ? "show" : "hidden"}
                 transition={{ delay: index * 0.1 }}
-                whileHover={{ scale: 1.02, boxShadow: "0px 4px 15px rgba(0,0,0,0.1)" }}
+                whileHover={{
+                  scale: 1.02,
+                  boxShadow: "0px 4px 15px rgba(0,0,0,0.1)",
+                }}
                 onMouseEnter={() => setHoveredIndex(index)}
                 onMouseLeave={() => setHoveredIndex(null)}
                 className={`h-full border rounded-xl cursor-pointer transition-all duration-300 ${
@@ -210,7 +213,7 @@ const FlexiblePricing = () => {
           })}
         </div>
 
-        {/* Right side image */}
+        {/* Right side */}
         <div className="mt-10 flex flex-col justify-center">
           <Image
             src={c2}
@@ -225,7 +228,7 @@ const FlexiblePricing = () => {
                 triggerOnce: true,
                 threshold: 0.1,
               });
-              
+
               return (
                 <motion.div
                   ref={ref}

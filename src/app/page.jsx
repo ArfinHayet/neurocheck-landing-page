@@ -10,7 +10,7 @@ import SuccessStories from "@/components/Home/SuccessStories";
 import React from "react";
 import Contact from "@/components/Home/Contact";
 
-const page = () => {
+export default function page() {
   return (
     <>
       <Hero />
@@ -27,4 +27,4 @@ const page = () => {
   );
 };
 
-export default page;
+ 

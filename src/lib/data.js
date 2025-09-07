@@ -100,3 +100,76 @@ export const howItWorksSteps = [
     desc: "Parents receive practical advice and actionable recommendations directly from the clinician. This could include strategies to support your child's growth and wellbeing.",
   },
 ];
+
+export const powerfulFeatures = [
+  {
+    Image: "/png/powerful1.png",
+    title: "AI-Powered Development Assessment",
+    subtitle:
+      "Parents answer structured questions, and the system analyzes responses to highlight potential concerns in a clear, easy-to-understand way.",
+  },
+  {
+    Image: "/png/powerful2.png",
+    title: "Clinician Feedback & Prescription",
+    subtitle:
+      "Verified clinicians review assessment results and provide professional feedback, and prescriptions when necessary.",
+  },
+  {
+    Image: "/png/powerful3.png",
+    title: "Multiple Child Profile Management",
+    subtitle:
+      "Parents can create and manage multiple child profiles with details like age, gender, and developmental history for tailored assessments.",
+  },
+  {
+    Image: "/png/powerful4.png",
+    title: "Secure Communication & Records",
+    subtitle:
+      "All assessments, clinician feedback, and prescriptions are stored safely, allowing parents to access past reports anytime.",
+  },
+  {
+    Image: "/png/powerful5.png",
+    title: "Flexible Plans & Transparent Pricing",
+    subtitle:
+      "Options for free initial assessments, detailed paid assessments, and clear information on clinician commissions and service charges.",
+  },
+];
+
+export const faqData = [
+  {
+    q: "How accurate are Neurocheckpro assessments?",
+    a: "Neurocheckpro assessments are designed by experts and use validated diagnostic methods, providing reliable results to help identify autism and ADHD in both children and adults.",
+  },
+  {
+    q: "Can I use Neurocheckpro for multiple family members?",
+    a: "Yes, Neurocheckpro allows you to create separate profiles for each family member, making it easy to manage and track multiple assessments.",
+  },
+  {
+    q: "How long does each assessment take?",
+    a: "Each assessment typically takes 15–30 minutes, depending on the type of evaluation and the individual's responses.",
+  },
+  {
+    q: "Is Neurocheckpro suitable for adults as well as children?",
+    a: "Absolutely. Neurocheckpro offers specialized assessments for both children and adults, ensuring accurate identification of autism, ADHD, or both conditions across age groups.",
+  },
+  {
+    q: "Do I need any prior medical knowledge to use the platform?",
+    a: "No prior medical knowledge is required. The platform is user-friendly and guides you step-by-step through each assessment.",
+  },
+  {
+    q: "Can I access my results anytime online?",
+    a: "Yes, once an assessment is complete, your results are securely stored online and can be accessed anytime through your Neurocheckpro account.",
+  },
+  {
+    q: "Are the assessments confidential and secure?",
+    a: "Yes, all data is encrypted and stored securely. Your personal and assessment information remains confidential at all times.",
+  },
+  {
+    q: "How often should assessments be repeated?",
+    a: "It is recommended to repeat assessments periodically, especially if there are changes in behavior or developmental progress, to ensure accurate monitoring over time.",
+  },
+  {
+    q: "Can Neurocheckpro replace a professional medical diagnosis?",
+    a: "Neurocheckpro is a reliable screening and diagnostic support tool, but it does not replace a full medical evaluation by a qualified healthcare professional.",
+  },
+];
+

@@ -63,7 +63,7 @@ const Navbar = () => {
     <div className="fixed top-0 left-0 w-full z-50 bg-transparent">
       <div className="max-w-screen-lg mx-auto mt-4 px-6 flex justify-between items-center">
         {/* Desktop Nav */}
-        <ul className="hidden md:flex bg-gradient-to-r from-white/80 to-transparent/20 backdrop-blur-lg rounded-full border md:h-[72px] lg:h-[80px]  md:px-8 lg:px-10 border-white justify-between items-center shadow-lg font-medium md:text-sm lg:text-base w-full">
+        <ul className="hidden md:flex bg-gradient-to-r from-white/80 to-transparent/20 backdrop-blur-lg rounded-full border md:h-[68px] lg:h-[76px]  md:px-8 lg:px-10 border-white justify-between items-center shadow-lg font-medium md:text-sm lg:text-base w-full">
           {navItems.map(({ label, id }) => (
             <li key={id}>
               <a

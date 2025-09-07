@@ -1,70 +1,47 @@
 "use client";
 import { Accordion, AccordionItem } from "@szhsin/react-accordion";
 import { FiPlus } from "react-icons/fi";
-import f1 from "../../../public/png/faqicon.png";
 import Image from "next/image";
 import { motion } from "framer-motion";
-
-const faqData = [
-  {
-    q: "How accurate are Neurocheckpro assessments?",
-    a: "Neurocheckpro assessments are designed by experts and use validated diagnostic methods, providing reliable results to help identify autism and ADHD in both children and adults.",
-  },
-  {
-    q: "Can I use Neurocheckpro for multiple family members?",
-    a: "Yes, Neurocheckpro allows you to create separate profiles for each family member, making it easy to manage and track multiple assessments.",
-  },
-  {
-    q: "How long does each assessment take?",
-    a: "Each assessment typically takes 15–30 minutes, depending on the type of evaluation and the individual's responses.",
-  },
-  {
-    q: "Is Neurocheckpro suitable for adults as well as children?",
-    a: "Absolutely. Neurocheckpro offers specialized assessments for both children and adults, ensuring accurate identification of autism, ADHD, or both conditions across age groups.",
-  },
-  {
-    q: "Do I need any prior medical knowledge to use the platform?",
-    a: "No prior medical knowledge is required. The platform is user-friendly and guides you step-by-step through each assessment.",
-  },
-  {
-    q: "Can I access my results anytime online?",
-    a: "Yes, once an assessment is complete, your results are securely stored online and can be accessed anytime through your Neurocheckpro account.",
-  },
-  {
-    q: "Are the assessments confidential and secure?",
-    a: "Yes, all data is encrypted and stored securely. Your personal and assessment information remains confidential at all times.",
-  },
-  {
-    q: "How often should assessments be repeated?",
-    a: "It is recommended to repeat assessments periodically, especially if there are changes in behavior or developmental progress, to ensure accurate monitoring over time.",
-  },
-  {
-    q: "Can Neurocheckpro replace a professional medical diagnosis?",
-    a: "Neurocheckpro is a reliable screening and diagnostic support tool, but it does not replace a full medical evaluation by a qualified healthcare professional.",
-  },
-];
+import { faqData } from "../../lib/data";
+import f1 from "../../../public/png/faqicon.png";
 
 const FAQ = () => {
   return (
     <section
-  id="faq"
-  className="relative py-12 md:py-20 mt-4 max-w-screen mx-auto px-4 md:px-8 lg:px-14 overflow-x-hidden"
->
+      id="faq"
+      className="relative py-12 md:py-20 mt-4 max-w-screen mx-auto px-4 md:px-8 lg:px-14 overflow-x-hidden"
+    >
+      {/* Mobile image */}
+      <div className="absolute inset-0 z-0 md:hidden mt-[20%] -ml-[20%]">
+        <Image
+          src={f1}
+          alt="FAQ Background"
+          className="object-cover opacity-30"
+        />
+      </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-5 items-start gap-12 md:gap-16 lg:gap-20">
-        {/* Left side - slide from left */}
+      <div className="relative z-10 grid grid-cols-1 md:grid-cols-5 items-start gap-6 md:gap-16 lg:gap-20">
+        {/* Left column  */}
         <motion.div
-          className="relative order-1 md:order-1 md:col-span-2"
+          className="relative md:col-span-2 flex flex-col justify-start items-start"
           initial={{ x: -100, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ type: "spring", stiffness: 70, damping: 20 }}
         >
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
-            Your <span className="text-secondary">Questions<br />Answered</span> About Us
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight text-center w-full md:w-auto md:text-left mb-4 md:mb-0">
+            Your{" "}
+            <span className="text-secondary">
+              Questions
+              <br />
+              Answered
+            </span>{" "}
+            About Us
           </h1>
 
-          <div className="md:mt-12 lg:mt-16 relative w-full h-64 md:h-80 lg:h-96 xl:h-[28rem] -ml-10 md:-ml-16 lg:-ml-[35%]">
+          {/*  desktop only */}
+          <div className="hidden md:block relative w-full h-64 md:h-80 lg:h-96 xl:h-[28rem] -ml-10 md:-ml-16 lg:-ml-[34%]">
             <Image
               src={f1}
               alt="FAQ Illustration"
@@ -75,7 +52,7 @@ const FAQ = () => {
           </div>
         </motion.div>
 
-        {/* Right side - slide from right */}
+        {/* accordion */}
         <motion.div
           className="md:col-span-3 order-2 md:order-2"
           initial={{ x: 100, opacity: 0 }}
@@ -86,7 +63,7 @@ const FAQ = () => {
           <Accordion
             transition
             transitionTimeout={600}
-            className="space-y-4 w-full"
+            className="space-y-4 md:w-full w-[90vw]"
           >
             {faqData.map((item, i) => (
               <AccordionItem
@@ -119,4 +96,3 @@ const FAQ = () => {
 };
 
 export default FAQ;
-

@@ -1,40 +1,8 @@
 "use client";
 import React, { useState } from "react";
+import { powerfulFeatures } from "../../lib/data";
 
 const PowerfulFeatures = () => {
-  const cards = [
-    {
-      Image: "/png/powerful1.png",
-      title: "AI-Powered Development Assessment",
-      subtitle:
-        "Parents answer structured questions, and the system analyzes responses to highlight potential concerns in a clear, easy-to-understand way.",
-    },
-    {
-      Image: "/png/powerful2.png",
-      title: "Clinician Feedback & Prescription",
-      subtitle:
-        "Verified clinicians review assessment results and provide professional feedback, and prescriptions when necessary.",
-    },
-    {
-      Image: "/png/powerful3.png",
-      title: "Multiple Child Profile Management",
-      subtitle:
-        "Parents can create and manage multiple child profiles with details like age, gender, and developmental history for tailored assessments.",
-    },
-    {
-      Image: "/png/powerful4.png",
-      title: "Secure Communication & Records",
-      subtitle:
-        "All assessments, clinician feedback, and prescriptions are stored safely, allowing parents to access past reports anytime.",
-    },
-    {
-      Image: "/png/powerful5.png",
-      title: "Flexible Plans & Transparent Pricing",
-      subtitle:
-        "Options for free initial assessments, detailed paid assessments, and clear information on clinician commissions and service charges.",
-    },
-  ];
-
   const [openIndex, setOpenIndex] = useState(null);
 
   const toggleAccordion = (index) => {
@@ -44,14 +12,13 @@ const PowerfulFeatures = () => {
   return (
     <div
       id="features"
-      className="py-16 max-w-screen mx-auto px-4 md:px-14 flex flex-col items-center justify-center overflow-hidden bg-primary"
+      className="py-12 md:py-16 max-w-screen mx-auto px-4 md:px-14 flex flex-col items-center justify-center overflow-hidden bg-primary"
     >
-      {/* Text Section */}
-      <div className="text-white gap-8 md:gap-12 flex flex-col md:flex-row items-center md:items-end justify-between w-full mb-10 text-center md:text-left">
-        <h1 className="font-semibold text-3xl md:text-4xl lg:text-5xl w-full md:w-2/5">
+      <div className="text-white gap-8 md:gap-12 flex flex-col md:flex-row items-center md:items-end justify-between w-full mb-6 md:md-8 text-center md:text-left">
+        <h1 className="font-semibold text-xl md:text-3xl lg:text-5xl w-full md:w-1/3">
           Powerful Features, Simple Experience
         </h1>
-        <p className="md:w-1/2 w-full text-base md:text-lg lg:text-xl">
+        <p className="md:w-1/2 w-full text-sm md:text-lg xl:text-xl">
           Discover how our platform makes developmental care easier, smarter,
           and more accessible. From guided assessments to expert clinician
           feedback, every feature is designed to support your child's growth
@@ -61,23 +28,25 @@ const PowerfulFeatures = () => {
 
       {/* Cards Section */}
       <section className="w-full py-8 rounded-3xl">
-        {/* Large screens: 5 cards in a row */}
-        <div className="hidden md:flex flex-wrap justify-center gap-4">
-          {cards.map((card, index) => (
+        <div className="hidden md:grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4 lg:gap-6 ">
+          {powerfulFeatures.map((card, index) => (
             <div
               key={index}
-              className="md:w-[19%] lg:h-[400px] md:h-[400px]  py-4 pl-4 pr-3 bg-white rounded-xl flex flex-col justify-start  items-start gap-18 hover:shadow-lg transition-all duration-300"
+              className=" bg-white rounded-xl flex flex-col justify-start items-start lg:gap-[30%] md:gap-[15%] p-4 md:p-5 h-[320px] md:h-[400px] lg:h-[430px] w-full  "
             >
               <img
                 src={card.Image}
                 alt={card.title}
-                className="w-[100px] h-[100px] object-cover rounded-md"
+                className="
+            object-cover rounded-md
+            w-[70px] h-[70px]  md:w-[80px] md:h-[80px] mb-3 md:mb-4 lg:mb-5
+          "
               />
-              <div>
-                <h3 className="text-gray-800 text-lg font-semibold pb-4">
+              <div className="  lg:space-y-4">
+                <h3 className="text-gray-800 font-semibold text-base md:text-lg  ">
                   {card.title}
                 </h3>
-                <p className="text-gray-600 text-base ">
+                <p className="text-gray-600 text-sm  text-balance ">
                   {card.subtitle}
                 </p>
               </div>
@@ -85,57 +54,9 @@ const PowerfulFeatures = () => {
           ))}
         </div>
 
-        {/* Medium screens: 3 cards in a row */}
-        <div className="hidden md:flex xl:hidden flex-wrap justify-center gap-5">
-          {cards.map((card, index) => (
-            <div
-              key={index}
-              className="w-[30%] h-[400px] py-5 px-4 bg-white rounded-xl flex flex-col justify-between gap-4 hover:shadow-lg transition-all duration-300"
-            >
-              <img
-                src={card.Image}
-                alt={card.title}
-                className="w-[70px] h-[70px] object-cover rounded-md"
-              />
-              <div>
-                <h3 className="text-gray-800 text-base font-semibold pb-3">
-                  {card.title}
-                </h3>
-                <p className="text-gray-600 text-sm text-balance">
-                  {card.subtitle}
-                </p>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Small-medium screens: 2 cards in a row */}
-        <div className="hidden sm:flex md:hidden flex-wrap justify-center gap-4">
-          {cards.map((card, index) => (
-            <div
-              key={index}
-              className="w-[45%] h-[380px] py-4 px-3 bg-white rounded-xl flex flex-col justify-between gap-3 hover:shadow-lg transition-all duration-300"
-            >
-              <img
-                src={card.Image}
-                alt={card.title}
-                className="w-[60px] h-[60px] object-cover rounded-md"
-              />
-              <div>
-                <h3 className="text-gray-800 text-sm font-semibold pb-2">
-                  {card.title}
-                </h3>
-                <p className="text-gray-600 text-xs text-balance">
-                  {card.subtitle}
-                </p>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Mobile screens: Accordion */}
-        <div className="sm:hidden w-full space-y-4">
-          {cards.map((card, index) => (
+        {/* Accordion for mobile */}
+        <div className="md:hidden w-full space-y-4">
+          {powerfulFeatures.map((card, index) => (
             <div
               key={index}
               className="bg-white rounded-xl overflow-hidden shadow-sm"
@@ -147,9 +68,9 @@ const PowerfulFeatures = () => {
                 <img
                   src={card.Image}
                   alt={card.title}
-                  className="w-12 h-12 object-cover rounded-md flex-shrink-0"
+                  className="w-10 h-10 object-cover rounded-md flex-shrink-0"
                 />
-                <span className="text-base font-medium text-gray-800 flex-grow">
+                <span className="text-sm font-medium text-gray-800 flex-grow">
                   {card.title}
                 </span>
                 <svg

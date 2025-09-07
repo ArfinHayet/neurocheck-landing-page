@@ -18,8 +18,8 @@ const navItems = [
 ];
 
 export const playfairDisplay = Playfair_Display({
-  subsets: ['latin'],
-  weight: ['400', '800'],
+  subsets: ["latin"],
+  weight: ["400", "800"],
 });
 
 const otherLinks = [
@@ -47,10 +47,12 @@ const Footer = () => {
   };
 
   return (
-    <footer className="max-w-screen mx-auto bg-primary text-white py-12 md:pt-24 md:pb-18">
-      <div className="grid grid-cols-1 md:grid-cols-6 gap-8 mb-10 px-4 md:px-14 lg:px-18">
+    <footer className="max-w-screen mx-auto bg-primary text-white pt-12 pb-10 md:pt-20 md:pb-12">
+      <div className="grid grid-cols-1 md:grid-cols-6 gap-8 mb-6 md:mb-10 px-4 md:px-14 lg:px-18">
         <div className="md:col-span-2 space-y-4">
-          <h3 className={`text-2xl md:text-3xl font-semibold mb-3 md:mb-6 ${playfairDisplay.className}`}>
+          <h3
+            className={`text-2xl md:text-3xl font-semibold mb-3 md:mb-6 ${playfairDisplay.className}`}
+          >
             NeuroCheckPro
           </h3>
           <p className="text-white mb-4 max-w-md text-sm md:text-lg">
@@ -63,7 +65,9 @@ const Footer = () => {
           <div className="space-y-3 text-white text-sm md:text-lg">
             <div className="flex gap-3 items-center">
               <FaLocationDot className="flex-shrink-0" />
-              <p className="font-medium">23 High Street, Manchester, United Kingdom</p>
+              <p className="font-medium">
+                23 High Street, Manchester, United Kingdom
+              </p>
             </div>
             <div className="flex gap-3 items-center">
               <MdEmail className="flex-shrink-0" />
@@ -78,7 +82,7 @@ const Footer = () => {
 
         {/* Useful Links */}
         <div className="md:col-span-2">
-          <h4 className="text-base md:text-xl font-semibold ">Useful Links</h4>
+          <h4 className="text-sm md:text-lg font-semibold ">Useful Links</h4>
           <hr className="border-gray-400 w-12 my-3  md:my-6" />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-6">
             <div className="space-y-3 text-xs md:text-base">
@@ -92,7 +96,7 @@ const Footer = () => {
                 </button>
               ))}
             </div>
-            <div className="space-y-3 ext-xs md:text-base">
+            <div className="space-y-3 text-xs md:text-base">
               {secondColumn.map(({ label, id }) => (
                 <button
                   key={id}
@@ -108,9 +112,9 @@ const Footer = () => {
 
         {/* Other Links */}
         <div>
-          <h4 className="text-base md:text-xl font-semibold ">Other Links</h4>
+          <h4 className="text-sm md:text-lg font-semibold ">Other Links</h4>
           <hr className="border-gray-400 w-12 my-3 md:mb-6" />
-          <div className="space-y-3 ext-xs md:text-base">
+          <div className="space-y-3 text-xs md:text-base">
             {otherLinks.map((link, index) => (
               <Link
                 key={index}
@@ -123,18 +127,17 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Follow Us */}
         <div>
-          <h4 className="text-base md:text-xl font-semibold ">Follow Us</h4>
+          <h4 className="text-sm md:text-lg font-semibold ">Follow Us</h4>
           <hr className="border-gray-400 w-12 my-3 md:my-6" />
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-2 md:gap-4">
             {socialLinks.map((social, index) => (
               <a
                 key={index}
                 href={social.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:opacity-80 transition-opacity"
+                className="hover:opacity-80 transition-opacity text-sm md:text-xl"
               >
                 {social.icon}
               </a>
@@ -145,18 +148,19 @@ const Footer = () => {
 
       <div className="h-px bg-gray-500 mb-6 "></div>
 
-      <div className="px-4 md:px-14 lg:px-18 flex flex-col  justify-center items-center gap-3  text-center">
+      <div className="px-4 md:px-14 lg:px-18 flex flex-col  justify-center items-center gap-3 text-center">
         <p className="flex gap-2 items-center text-sm">
           <FaCopyright /> Copyright by NeuroCheckPro.
         </p>
         <p className="text-sm">
-          Developed by
-          <a 
-            className="font-semibold hover:underline" 
+          Developed by{" "}
+          <a
+            className="font-semibold hover:underline"
             href="https://mpairtech.com/"
             target="_blank"
             rel="noopener noreferrer"
           >
+            {" "}
             mPair Technologies Ltd.
           </a>
         </p>

@@ -31,11 +31,10 @@ const HowItWorks = () => {
   return (
     <section
       id="howitworks"
-      className="max-w-screen mx-auto py-14 md:py-20 px-4 md:px-10 lg:px-18"
+      className="max-w-screen mx-auto py-14 md:py-20 px-4 sm:px-6 md:px-10 lg:px-18"
     >
-      {/* Heading */}
       <div className="mb-12 md:mb-16 flex flex-col items-center justify-center text-center">
-        <h2 className="font-bold text-3xl sm:text-4xl md:text-5xl mb-4 md:mb-6">
+        <h2 className="font-bold text-xl md:4xl xl:text-5xl mb-4 md:mb-6">
           How <span className="text-gray-500">Neurocheckpro Works</span>
         </h2>
         <p className="max-w-4xl text-secondary text-sm sm:text-base md:text-lg">
@@ -45,51 +44,49 @@ const HowItWorks = () => {
         </p>
       </div>
 
-      {/* Layout */}
-      <div className="flex flex-col lg:flex-row justify-between gap-8 md:gap-14">
-        {/* Left side - animated */}
+      <div className="flex flex-col md:flex-row justify-between gap-8">
+        {/* Left  */}
         <motion.div
           initial={{ x: -100, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
           viewport={{ once: true, amount: 0.3 }}
-          whileHover={{ scale: 1.02 }}
           transition={{ type: "spring", stiffness: 70, damping: 20 }}
-          className="flex-1 sticky md:top-20 bg-[#FFE2F7] rounded-xl w-full order-1 lg:order-none"
+          className="w-full md:w-1/3 sticky md:top-20 bg-[#FFE2F7] rounded-xl order-1 md:order-none"
         >
           <div className="flex justify-between items-start">
-            <div className="rounded-full border border-[#849DAE] md:m-6 m-3 py-2 px-6 w-fit h-full mb-4 md:mb-6">
-              <p className="text-base md:text-lg font-medium">5 Quick Steps</p>
+            <div className="rounded-full w-[100%] lg:w-fit border border-[#849DAE] m-3 md:m-4 py-2 px-2 md:px-4 mb-4 md:mb-6">
+              <p className="text-sm sm:text-base font-medium">5 Quick Steps</p>
             </div>
             <Image
               src={c1}
               height={400}
               width={400}
-              className="h-[200px] w-[140px] sm:h-[260px] sm:w-[200px] md:h-[300px] md:w-[230px]"
+              className="h-[180px] w-[120px] md:h-[300px] md:w-[200px] lg:w-[240px] "
               alt="Curve"
             />
           </div>
-          <p className="text-2xl sm:text-3xl md:text-5xl leading-snug p-6 md:p-8">
+          <p className="text-xl md:text-5xl leading-snug p-4 md:p-6">
             Your path <br />
             to <span className="font-semibold italic">Wellness</span>
           </p>
         </motion.div>
 
-        {/* Right side */}
-        <div className="relative order-2 lg:order-none">
+        {/* Right */}
+        <div className="relative w-full md:w-2/3 order-2 md:order-none">
           <div
             ref={listContainerRef}
-            className="max-h-[380px] sm:max-h-[420px] md:max-h-[500px] overflow-y-auto pr-2 md:pr-4 space-y-6 sm:space-y-8 md:space-y-12 pt-4 sm:pt-6 md:pt-10 hide-scrollbar"
+            className="max-h-[360px] sm:max-h-[420px] md:max-h-[500px] overflow-y-auto pr-2 sm:pr-3 md:pr-4 space-y-6  md:space-y-10 pt-4  md:pt-8 hide-scrollbar"
           >
             {howItWorksSteps.map((item) => (
-              <div key={item.id} className="flex items-start gap-4 md:gap-8">
-                <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 rounded-full bg-gray-500 text-white flex items-center justify-center text-base sm:text-lg md:text-3xl font-semibold">
+              <div key={item.id} className="flex items-start gap-2 md:gap-4 ">
+                <div className="flex-shrink-0 w-8 h-8 md:h-10 md:w-10 lg:w-14 lg:h-14 rounded-full bg-gray-500 text-white flex items-center justify-center text-sm sm:text-lg md:text-2xl font-semibold">
                   {item.id}
                 </div>
                 <div>
                   <h3 className="text-base sm:text-lg md:text-xl font-semibold">
                     {item.title}
                   </h3>
-                  <p className="text-gray-600 text-sm sm:text-base max-w-sm md:max-w-3xl pr-4 md:pr-0">
+                  <p className="text-gray-600 text-xs md:text-base w-[90%] pr-3 md:pr-0">
                     {item.desc}
                   </p>
                 </div>
@@ -99,7 +96,7 @@ const HowItWorks = () => {
 
           {/* Fade effect */}
           {showFade && (
-            <div className="absolute bottom-0 left-0 right-4 h-20 md:h-48 bg-gradient-to-t from-white to-transparent pointer-events-none"></div>
+            <div className="absolute bottom-0 left-0 right-4 h-16 sm:h-20 md:h-48 bg-gradient-to-t from-white to-transparent pointer-events-none"></div>
           )}
         </div>
       </div>
