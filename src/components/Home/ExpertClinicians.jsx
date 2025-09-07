@@ -5,7 +5,7 @@ import c2 from "../../../public/png/image 9.png";
 
 export default function ExpertClinicians() {
   return (
-    <section className="relative max-w-screen mx-auto py-10 md:py-12 lg:py-20 px-4 md:px-8 lg:px-14 flex flex-col items-center bg-gradient-to-b from-[#114654] to-[#0C738E] overflow-hidden h-[85vh] md:min-h-screen">
+    <section className="relative max-w-screen mx-auto py-10 md:py-12 lg:py-20 px-4 md:px-8 lg:px-14 flex flex-col items-center bg-gradient-to-b from-[#114654] to-[#0C738E] overflow-hidden h-[75vh] md:min-h-screen">
       <div className="text-center mb-6 md:mb-8 lg:mb-10 max-w-3xl">
         <h2 className="text-xl md:text-4xl xl:text-5xl font-semibold text-white mb-3 md:mb-4">
           Meet Our Expert Clinicians

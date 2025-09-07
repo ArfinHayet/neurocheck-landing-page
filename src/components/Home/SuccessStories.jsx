@@ -67,7 +67,8 @@ const SuccessStories = () => {
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth < 768) {
-        setScrollPadding("10");
+        const gap = (window.innerWidth - window.innerWidth * 0.8) / 2; // 80vw, center it
+        setScrollPadding(`${gap}px`);
       } else {
         setScrollPadding("0 40%");
       }
@@ -152,17 +153,20 @@ const SuccessStories = () => {
           <div
             ref={scrollRef}
             onScroll={handleScroll}
-            className="flex overflow-x-auto hide-scrollbar py-4"
+            className="flex overflow-x-auto hide-scrollbar py-4 gap-4 md:gap-0"
             style={{
               scrollSnapType: "x mandatory",
-              scrollPadding: scrollPadding,
+              scrollPaddingLeft: scrollPadding,
             }}
           >
             {clonedTestimonials.map((testimonial, index) => (
               <div
                 key={index}
                 className="flex-shrink-0"
-                style={{ scrollSnapAlign: "start" }}
+                style={{
+                  scrollSnapAlign: "center",
+                  width: window.innerWidth < 768 ? "80vw" : undefined,
+                }}
               >
                 <UsersCards testimonial={testimonial} />
               </div>
