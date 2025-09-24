@@ -96,8 +96,7 @@ const Hero = () => {
             NeuroCheck Pro
           </p>
           <h1 className="font-bold text-xl md:text-4xl xl:text-5xl w-full md:w-[95%] mb-4 lg:mb-6 leading-tight mx-auto lg:mx-0">
-            Smarter <span className="text-primary">Autism </span>Care, Powered
-            by Professional Clinicians
+            Your <span className="text-primary">Neurodiversity </span>Journey, Simplified
           </h1>
           <p className="w-full md:max-w-xl text-sm md:text-base lg:max-w-2xl  lg:text-lg text-gray-500 mx-auto lg:mx-0">
             A trusted digital platform that connects families with expert
