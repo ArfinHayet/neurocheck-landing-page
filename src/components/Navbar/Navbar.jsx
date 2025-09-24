@@ -22,6 +22,8 @@ const Navbar = () => {
 
   // Highlight active section while scrolling
   useEffect(() => {
+    if (typeof window === "undefined") return; // SSR-safe
+
     const handleScroll = () => {
       if (isClickScrolling.current) return;
 
@@ -40,7 +42,7 @@ const Navbar = () => {
 
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [navItems]);
 
   // Smooth scroll when clicking
   const handleClick = (e, id) => {
@@ -49,6 +51,7 @@ const Navbar = () => {
     isClickScrolling.current = true;
     setMobileOpen(false);
 
+    if (typeof window === "undefined") return; // SSR-safe
     const el = document.getElementById(id);
     if (el) {
       el.scrollIntoView({ behavior: "smooth", block: "start" });

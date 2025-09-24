@@ -17,15 +17,26 @@ import h1 from "../../../public/png/WhatsApp Image 2025-09-24 at 1.24.34 PM.jpeg
 const Hero = () => {
   const [isHovered, setIsHovered] = useState(false);
   const [screenType, setScreenType] = useState("desktop");
+  const [isClient, setIsClient] = useState(false); // NEW: track client
 
+  // Client check
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  // Handle scroll safely
   const handleScroll = () => {
+    if (!isClient) return;
     const section = document.getElementById("about");
     if (section) {
       section.scrollIntoView({ behavior: "smooth" });
     }
   };
 
+  // Window resize detection
   useEffect(() => {
+    if (!isClient) return;
+
     const checkScreen = () => {
       if (window.innerWidth < 768) {
         setScreenType("mobile");
@@ -39,7 +50,7 @@ const Hero = () => {
     checkScreen();
     window.addEventListener("resize", checkScreen);
     return () => window.removeEventListener("resize", checkScreen);
-  }, []);
+  }, [isClient]);
 
   const cardVariants = {
     hidden: {
@@ -96,7 +107,8 @@ const Hero = () => {
             NeuroCheck Pro
           </p>
           <h1 className="font-bold text-xl md:text-4xl xl:text-5xl w-full md:w-[95%] mb-4 lg:mb-6 leading-tight mx-auto lg:mx-0">
-            Your <span className="text-primary">Neurodiversity </span>Journey, Simplified
+            Your <span className="text-primary">Neurodiversity </span>Journey,
+            Simplified
           </h1>
           <p className="w-full md:max-w-xl text-sm md:text-base lg:max-w-2xl  lg:text-lg text-gray-500 mx-auto lg:mx-0">
             A trusted digital platform that connects families with expert

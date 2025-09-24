@@ -56,6 +56,7 @@ const SuccessStories = () => {
   const containerRef = useRef(null);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [scrollPadding, setScrollPadding] = useState("0 40%");
+  const [windowWidth, setWindowWidth] = useState(0); // NEW: track window width
 
   const cardWidth = 430;
   const clonedTestimonials = [
@@ -64,20 +65,26 @@ const SuccessStories = () => {
     ...testimonials,
   ];
 
+  // Client-only window width
   useEffect(() => {
+    if (typeof window === "undefined") return;
+
     const handleResize = () => {
+      setWindowWidth(window.innerWidth);
       if (window.innerWidth < 768) {
-        const gap = (window.innerWidth - window.innerWidth * 0.8) / 2; // 80vw, center it
+        const gap = (window.innerWidth - window.innerWidth * 0.8) / 2;
         setScrollPadding(`${gap}px`);
       } else {
         setScrollPadding("0 40%");
       }
     };
+
     handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  // Initial scroll position
   useEffect(() => {
     if (scrollRef.current) {
       scrollRef.current.scrollLeft = testimonials.length * cardWidth;
@@ -165,7 +172,7 @@ const SuccessStories = () => {
                 className="flex-shrink-0"
                 style={{
                   scrollSnapAlign: "center",
-                  width: window.innerWidth < 768 ? "80vw" : undefined,
+                  width: windowWidth && windowWidth < 768 ? "80vw" : undefined,
                 }}
               >
                 <UsersCards testimonial={testimonial} />
