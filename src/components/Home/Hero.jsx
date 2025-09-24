@@ -12,6 +12,7 @@ import p6 from "../../../public/png/circular.png";
 import { FaArrowRightLong, FaStar } from "react-icons/fa6";
 import { HiShieldCheck } from "react-icons/hi2";
 import { IoIosArrowRoundForward } from "react-icons/io";
+import h1 from "../../../public/png/WhatsApp Image 2025-09-24 at 1.24.34 PM.jpeg";
 
 const Hero = () => {
   const [isHovered, setIsHovered] = useState(false);
@@ -92,7 +93,7 @@ const Hero = () => {
         {/* Left Side */}
         <div className="flex-1  text-center md:text-left mb-4 md:mb-0">
           <p className="font-medium text-xs md:text-lg uppercase mb-2 xl:mb-2">
-            NeuroCheckPro
+            NeuroCheck Pro
           </p>
           <h1 className="font-bold text-xl md:text-4xl xl:text-5xl w-full md:w-[95%] mb-4 lg:mb-6 leading-tight mx-auto lg:mx-0">
             Smarter <span className="text-primary">Autism </span>Care, Powered
@@ -179,13 +180,14 @@ const Hero = () => {
 
           <div className="relative w-full flex justify-center">
             {/* Main Image */}
-            <Image
-              src={ph}
-              height={800}
-              width={800}
-              alt="neurocheckpro"
-              className="object-cover rounded-2xl relative z-20 md:pt-[20%] lg:pt-[8%] w-[95%]"
-            />
+            <div className="relative w-[95%] h-[55vh] rounded-2xl overflow-hidden md:pt-[25%] lg:mt-[8%]">
+              <Image
+                src={h1}
+                alt="neurocheck pro"
+                fill
+                className="object-center"
+              />
+            </div>
 
             {/* Floating Cards */}
             <div>

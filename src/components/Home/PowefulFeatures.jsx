@@ -18,21 +18,21 @@ const PowerfulFeatures = () => {
         <h1 className="font-semibold text-xl md:text-3xl lg:text-5xl w-full md:w-1/3">
           Powerful Features, Simple Experience
         </h1>
-        <p className="md:w-1/2 w-full text-sm md:text-lg xl:text-xl">
+        {/* <p className="md:w-1/2 w-full text-sm md:text-lg xl:text-xl">
           Discover how our platform makes developmental care easier, smarter,
           and more accessible. From guided assessments to expert clinician
           feedback, every feature is designed to support your child's growth
           with clarity and confidence.
-        </p>
+        </p> */}
       </div>
 
       {/* Cards Section */}
       <section className="w-full py-8 rounded-3xl">
-        <div className="hidden md:grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4 lg:gap-6 ">
+        <div className="hidden md:grid grid-cols-2 md:grid-cols-4 gap-4 lg:gap-6 ">
           {powerfulFeatures.map((card, index) => (
             <div
               key={index}
-              className=" bg-white rounded-xl flex flex-col justify-start items-start lg:gap-[30%] md:gap-[15%] p-4 md:p-5 h-[320px] md:h-[400px] lg:h-[430px] w-full  "
+              className=" bg-white rounded-xl flex flex-col justify-start items-start lg:gap-[33%] md:gap-[12%] p-4 md:p-5 h-[320px] md:h-[400px] lg:h-[400px] w-full  "
             >
               <img
                 src={card.Image}
@@ -42,11 +42,11 @@ const PowerfulFeatures = () => {
             w-[70px] h-[70px]  md:w-[80px] md:h-[80px] mb-3 md:mb-4 lg:mb-5
           "
               />
-              <div className="  lg:space-y-4">
-                <h3 className="text-gray-800 font-semibold text-base md:text-lg  ">
+              <div className="md:space-y-4">
+                <h3 className="text-gray-800 font-semibold text-base lg:text-lg  ">
                   {card.title}
                 </h3>
-                <p className="text-gray-600 text-sm  text-balance ">
+                <p className="text-gray-600 text-xs lg:text-sm  text-balance ">
                   {card.subtitle}
                 </p>
               </div>

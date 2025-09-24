@@ -35,13 +35,13 @@ const HowItWorks = () => {
     >
       <div className="mb-12 md:mb-16 flex flex-col items-center justify-center text-center">
         <h2 className="font-bold text-xl md:4xl xl:text-5xl mb-4 md:mb-6">
-          How <span className="text-gray-500">Neurocheckpro Works</span>
+          How <span className="text-gray-500">Neurocheck Pro Works</span>
         </h2>
-        <p className="max-w-4xl text-secondary text-sm sm:text-base md:text-lg">
+        {/* <p className="max-w-4xl text-secondary text-sm sm:text-base md:text-lg">
           A simple step-by-step process that combines smart technology with
           expert care to guide parents in supporting their child's development
           effectively.
-        </p>
+        </p> */}
       </div>
 
       <div className="flex flex-col md:flex-row justify-between gap-8">
@@ -55,7 +55,7 @@ const HowItWorks = () => {
         >
           <div className="flex justify-between items-start">
             <div className="rounded-full w-[100%] lg:w-fit border border-[#849DAE] m-3 md:m-4 py-2 px-2 md:px-4 mb-4 md:mb-6">
-              <p className="text-sm sm:text-base font-medium">5 Quick Steps</p>
+              <p className="text-sm sm:text-base font-medium">4 Quick Steps</p>
             </div>
             <Image
               src={c1}
