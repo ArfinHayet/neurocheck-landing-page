@@ -70,17 +70,17 @@ const Hero = () => {
   // Adjusted positions for mobile visibility
   const cardPositions = {
     advantages: {
-      mobile: { top: "86%", left: "-2%", transform: "translateX(-50%)" },
+      mobile: { top: "94%", left: "-2%", transform: "translateX(-50%)" },
       tablet: { top: "96%", left: "-2rem" },
       desktop: { top: "88%", left: "-6rem" },
     },
     rating: {
-      mobile: { top: "50%", right: "-6%" },
+      mobile: { top: "50%", right: "-4%" },
       tablet: { top: "60%", right: "-16%" },
       desktop: { bottom: "10%", right: "-7%" },
     },
     care: {
-      mobile: { top: "-18%", left: "-3%", transform: "translateX(-50%)" },
+      mobile: { top: "-22%", left: "-3%", transform: "translateX(-50%)" },
       tablet: { top: "8%", left: "20%" },
       desktop: { top: "1rem", left: "25%" },
     },
@@ -199,7 +199,7 @@ const Hero = () => {
 
           <div className="relative w-full flex justify-center md:mt-[0%] mt-[18%]">
             {/* Main Image */}
-            <div className="relative w-full md:w-[95%] h-[55vh] md:h-[55vh] lg:h-[55vh]  lg:mt-[8%] -mt-[10%] rounded-2xl overflow-hidden">
+            <div className="relative w-full md:w-[95%] h-[40vh] md:h-[55vh] lg:h-[55vh]  lg:mt-[8%] -mt-[10%] rounded-2xl overflow-hidden">
               <Image
                 src={h1}
                 alt="neurocheck pro"
