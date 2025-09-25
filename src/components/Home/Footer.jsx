@@ -26,7 +26,7 @@ const otherLinks = [
   { name: "Clinician's Policy", href: "/clinician-policy" },
   { name: "Customer Policy", href: "/customer-policy" },
   { name: "Terms & Conditions", href: "/terms" },
-  { name: "Privacy Policy", href: "/privacy" },
+  { name: "Privacy Policy", href: "/privacyPolicy" },
 ];
 
 const socialLinks = [
@@ -151,7 +151,7 @@ const Footer = () => {
 
       <div className="px-4 md:px-14 lg:px-18 flex flex-col  justify-center items-center gap-3 text-center">
         <p className="flex gap-2 items-center text-sm">
-          <FaCopyright /> Copyright by NeuroCheckPro.
+          <FaCopyright /> Copyright by NeuroCheck Pro.
         </p>
         <p className="text-sm">
           Developed by{" "}
