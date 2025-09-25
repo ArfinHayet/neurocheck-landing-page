@@ -3,6 +3,8 @@
 import React, { useEffect, useState, useRef } from "react";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { IoCloseOutline } from "react-icons/io5";
+import Image from "next/image";
+import logo from "../../../public/png/Frame_35703-removebg-preview.png";
 
 const Navbar = () => {
   const [active, setActive] = useState("home");
@@ -12,10 +14,10 @@ const Navbar = () => {
   const navItems = [
     { label: "Home", id: "home" },
     { label: "How it works", id: "howitworks" },
-    { label: "Features", id: "features" },
-    { label: "Pricing", id: "pricing" },
-    { label: "Success Stories", id: "successstories" },
-    { label: "FAQ", id: "faq" },
+    // { label: "Features", id: "features" },
+    // { label: "Pricing", id: "pricing" },
+    // { label: "Success Stories", id: "successstories" },
+    // { label: "FAQ", id: "faq" },
     { label: "About Us", id: "about" },
     { label: "Contact", id: "contact" },
   ];
@@ -63,35 +65,48 @@ const Navbar = () => {
   };
 
   return (
-    <div className="fixed top-0 left-0 w-full z-50 bg-transparent">
-      <div className="max-w-screen-lg mx-auto mt-4 px-6 flex justify-between items-center">
-        {/* Desktop Nav */}
-        <ul className="hidden md:flex bg-gradient-to-r from-white/80 to-transparent/20 backdrop-blur-lg rounded-full border md:h-[68px] lg:h-[76px]  md:px-8 lg:px-10 border-white justify-between items-center shadow-lg font-medium md:text-sm lg:text-base w-full">
-          {navItems.map(({ label, id }) => (
-            <li key={id}>
-              <a
-                href={`#${id}`}
-                onClick={(e) => handleClick(e, id)}
-                className={`cursor-pointer transition-colors ${
-                  active === id
-                    ? "text-primary border-b-2 border-primary py-1"
-                    : "text-secondary"
-                }`}
-              >
-                {label}
-              </a>
-            </li>
-          ))}
-        </ul>
+   <div className="fixed top-0 left-0 w-full z-50 bg-transparent">
+      <div className="flex items-center justify-start md:justify-between px-6 md:px-12 py-3">
+        
+        <div className="flex-1 flex justify-center ms-[30%] md:ms-0 md:justify-start">
+          <Image
+            src={logo}
+            height={50}
+            width={180}
+            className="h-8 md:h-14 w-auto"
+            alt="logo"
+          />
+        </div>
+
+        {/* Desktop Nav  */}
+        <div className="hidden md:flex flex-2 justify-start">
+          <ul className="flex bg-gradient-to-r from-white/80 to-transparent/20 backdrop-blur-lg rounded-full border h-[68px] px-8 border-white items-center shadow-lg font-medium text-sm lg:text-base gap-8">
+            {navItems.map(({ label, id }) => (
+              <li key={id}>
+                <a
+                  href={`#${id}`}
+                  onClick={(e) => handleClick(e, id)}
+                  className={`cursor-pointer transition-colors ${
+                    active === id
+                      ? "text-primary border-b-2 border-primary py-1"
+                      : "text-secondary"
+                  }`}
+                >
+                  {label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
 
         {/* Mobile Menu Button */}
-        <div className="md:hidden flex justify-end flex-1">
+        <div className="flex-1 flex justify-end md:hidden">
           {!mobileOpen && (
             <button
               className="text-black z-50"
               onClick={() => setMobileOpen(true)}
             >
-              <RxHamburgerMenu size={28} />
+              <RxHamburgerMenu size={26} />
             </button>
           )}
         </div>
@@ -127,5 +142,6 @@ const Navbar = () => {
     </div>
   );
 };
+ 
 
 export default Navbar;

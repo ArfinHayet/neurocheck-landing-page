@@ -72,7 +72,7 @@ const Hero = () => {
     advantages: {
       mobile: { top: "94%", left: "-2%", transform: "translateX(-50%)" },
       tablet: { top: "96%", left: "-2rem" },
-      desktop: { top: "88%", left: "-6rem" },
+      desktop: { top: "84%", left: "-6rem" },
     },
     rating: {
       mobile: { top: "50%", right: "-4%" },
@@ -89,15 +89,15 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="pt-10 pb-24 md:pt-[19vh] md:pb-20 
+      className="pt-16 pb-24 md:pt-[19vh] md:pb-20 
                  max-w-screen mx-auto px-4 md:px-14 
                  overflow-hidden relative 
-                 min-h-[130vh] md:min-h-[100vh] "
+                 min-h-[110vh] md:min-h-[100vh] bg-[#114654]/5"
       onMouseEnter={() => setIsHovered(true)}
     >
       {/* Background Blurs */}
-      <div className=" absolute -z-50 top-[-120px] left-[-90px] w-[450px] h-[450px] sm:w-[600px] sm:h-[600px] md:w-[900px] md:h-[900px] bg-[#F8D2D3]/40 rounded-full blur-3xl " />
-      <div className=" absolute -z-50 top-[50%] md:top-1 right-[-110px] w-[360px] h-[280px] md:w-[900px] md:h-[600px]  bg-[#114654]/25 rounded-full blur-3xl " />
+      <div className=" absolute -z-50 top-[-120px] left-[-90px] w-[450px] h-[450px] sm:w-[600px] sm:h-[600px] md:w-[860px] md:h-[780px] bg-[#F8D2D3]/40 rounded-full blur-3xl " />
+      <div className=" absolute -z-50 top-[50%] md:top-1 right-[-110px] w-[360px] h-[280px] md:w-[860px] md:h-[600px]  bg-[#114654]/25 rounded-full blur-3xl " />
 
       {/* Container */}
       <div className="flex flex-col md:flex-row justify-center md:justify-start  items-center md:items-start  gap-[10%] xl:gap-[12%]">
@@ -117,7 +117,7 @@ const Hero = () => {
           </p>
 
           {/* Users + Stores  */}
-          <div className="relative h-fit w-full rounded-lg overflow-hidden">
+          {/* <div className="relative h-fit w-full rounded-lg overflow-hidden">
             <div className="absolute inset-0  bg-white/40 backdrop-blur-md z-10">
               <p className="md:p-4 p-8 text-center text-4xl font-bold">
                 Coming Soon
@@ -171,14 +171,14 @@ const Hero = () => {
                 </a>
               </div>
             </div>
-          </div>
+          </div> */}
 
           {/* Button */}
           <button
             onClick={handleScroll}
             className="mt-6 lg:mt-8 h-9 md:h-10 lg:h-12 px-3 lg:px-6 py-1.5 lg:py-3 bg-[#0A4863] rounded-full text-white flex items-center justify-center gap-2 hover:bg-primary-dark transition mx-auto lg:mx-0 text-sm md:text-base"
           >
-            Learn More <IoIosArrowRoundForward size={24} />
+            Get Diagnosed <IoIosArrowRoundForward size={24} />
           </button>
         </div>
 
@@ -213,7 +213,7 @@ const Hero = () => {
             <div>
               {/* Advantages */}
               <motion.div
-                className="absolute bg-white shadow-lg rounded-xl z-30"
+                className="absolute bg-white shadow-md rounded-xl z-30"
                 style={{
                   top: cardPositions.advantages[screenType].top,
                   left: cardPositions.advantages[screenType].left,

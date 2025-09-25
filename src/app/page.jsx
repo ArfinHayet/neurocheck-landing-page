@@ -9,12 +9,16 @@ import PowerfulFeatures from "@/components/Home/PowefulFeatures";
 import SuccessStories from "@/components/Home/SuccessStories";
 import React from "react";
 import Contact from "@/components/Home/Contact";
+import Team from "@/components/Home/Team";
+import { ComingSoon } from "@/components/Home/ComingSoon";
 
 export default function page() {
   return (
     <>
       <Hero />
-      <HowItWorks />
+      <Team />
+      <ComingSoon />
+      {/* <HowItWorks />
       <PowerfulFeatures />
       <FlexiblePricing />
       <SuccessStories />
@@ -22,7 +26,7 @@ export default function page() {
       <ExpertClinicians />
       <AboutUs />
       <Contact />
-      <Footer />
+      <Footer /> */}
     </>
   );
 };
