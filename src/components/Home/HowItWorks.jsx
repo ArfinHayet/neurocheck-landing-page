@@ -54,7 +54,7 @@ const HowItWorks = () => {
           className="w-full md:w-1/3 sticky md:top-20 bg-[#FFE2F7] rounded-xl order-1 md:order-none"
         >
           <div className="flex justify-between items-start">
-            <div className="rounded-full w-[100%] lg:w-fit border border-[#849DAE] m-3 md:m-4 py-2 px-2 md:px-4 mb-4 md:mb-6">
+            <div className="rounded-full max-w-[70%] lg:w-fit border border-[#849DAE] m-3 md:m-4 py-2 px-2 md:px-4 mb-4 md:mb-6">
               <p className="text-sm sm:text-base font-medium">4 Quick Steps</p>
             </div>
             <Image

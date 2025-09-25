@@ -69,8 +69,8 @@ export default function Contact() {
                 Available: 08:30 AM - 10:30 PM
               </p>
               <p className="font-medium text-sm md:text-lg">
-                +44 161 123 4567
-                <span className="font-normal">(Whatsapp available)</span>
+                +44 7451 248601 
+                <span className="font-normal"> (Whatsapp available)</span>
               </p>
             </div>
 
@@ -90,8 +90,8 @@ export default function Contact() {
                 <h3 className=" font-semibold">Location</h3>
               </div>
               <p className="text-sm md:text-lg">
-                23 High Street Manchester, Greater Manchester, MI 446, United
-                Kingdom
+                3rd Floor, 86-90 Paul Street, London, England, United Kingdom,
+                EC2A 4NE
               </p>
             </div>
           </div>

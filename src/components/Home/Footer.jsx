@@ -53,10 +53,10 @@ const Footer = () => {
           <h3
             className={`text-2xl md:text-3xl font-semibold mb-3 md:mb-6 ${playfairDisplay.className}`}
           >
-            NeuroCheckPro
+            NeuroCheck Pro
           </h3>
           <p className="text-white mb-4 max-w-md text-sm md:text-lg">
-            NeuroCheckPro is a smart assessment platform that connects parents
+            NeuroCheck Pro is a smart assessment platform that connects parents
             and clinicians, offering structured evaluations and expert feedback
             to support children's developmental and neurological progress.
           </p>
@@ -66,7 +66,8 @@ const Footer = () => {
             <div className="flex gap-3 items-center">
               <FaLocationDot className="flex-shrink-0" />
               <p className="font-medium">
-                23 High Street, Manchester, United Kingdom
+                3rd Floor, 86-90 Paul Street, London, England, United Kingdom,
+                EC2A 4NE
               </p>
             </div>
             <div className="flex gap-3 items-center">
@@ -75,7 +76,7 @@ const Footer = () => {
             </div>
             <div className="flex gap-3 items-center">
               <FaPhone className="flex-shrink-0" />
-              <p className="font-medium">+0400 1999 11 1199</p>
+              <p className="font-medium">+44 7451 248601</p>
             </div>
           </div>
         </div>

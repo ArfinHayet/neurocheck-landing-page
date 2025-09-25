@@ -9,37 +9,37 @@ import c2 from "../../../public/png/curve1.png";
 const pricingPlans = [
   {
     title: "Child Autism Diagnosis",
-    price: "1250",
+    price: "2000",
     description:
       "Quickly assess your child for autism with our reliable and easy-to-use diagnostic tools for accurate early detection.",
   },
   {
     title: "Child ADHD Diagnosis",
-    price: "1250",
+    price: "2000",
     description:
       "Identify attention and hyperactivity challenges in children with our comprehensive ADHD assessment.",
   },
   {
     title: "Child Autism + ADHD Diagnosis",
-    price: "1250",
+    price: "3500",
     description:
       "A combined evaluation to detect both autism and ADHD in children for a complete understanding of their needs.",
   },
   {
     title: "Adult Autism Diagnosis",
-    price: "1250",
+    price: "2500",
     description:
       "Evaluate adults for autism with our professional tools designed for accurate and insightful assessments.",
   },
   {
     title: "Adult ADHD Diagnosis",
-    price: "1250",
+    price: "2500",
     description:
       "Assess adult attention and hyperactivity traits to help understand behavioral patterns and improve daily functioning.",
   },
   {
     title: "Adult Autism + ADHD Diagnosis",
-    price: "1250",
+    price: "3500",
     description:
       "Comprehensive adult assessment to identify both autism and ADHD, offering clarity and guidance for support strategies.",
   },
@@ -143,8 +143,8 @@ const FlexiblePricing = () => {
                 <h3 className="font-semibold text-sm md:text-base">
                   {plan.title}
                 </h3>
-                <span className="font-semibold text-xl md:text-2xl text-primary flex items-center">
-                  <span className="text-primary text-base md:text-lg">£</span>
+                <span className="font-semibold text-xl md:text-2xl text-primary flex items-center gap-0.5">
+                  <span className="text-primary text-base md:text-lg ">£ </span>
                   {plan.price}
                 </span>
               </div>

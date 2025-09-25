@@ -70,17 +70,17 @@ const Hero = () => {
   // Adjusted positions for mobile visibility
   const cardPositions = {
     advantages: {
-      mobile: { top: "96%", left: "-2%", transform: "translateX(-50%)" },
+      mobile: { top: "86%", left: "-2%", transform: "translateX(-50%)" },
       tablet: { top: "96%", left: "-2rem" },
       desktop: { top: "88%", left: "-6rem" },
     },
     rating: {
-      mobile: { top: "50%", right: "-10%" },
+      mobile: { top: "50%", right: "-6%" },
       tablet: { top: "60%", right: "-16%" },
       desktop: { bottom: "10%", right: "-7%" },
     },
     care: {
-      mobile: { top: "-22%", left: "-3%", transform: "translateX(-50%)" },
+      mobile: { top: "-18%", left: "-3%", transform: "translateX(-50%)" },
       tablet: { top: "8%", left: "20%" },
       desktop: { top: "1rem", left: "25%" },
     },
@@ -92,7 +92,7 @@ const Hero = () => {
       className="pt-10 pb-24 md:pt-[19vh] md:pb-20 
                  max-w-screen mx-auto px-4 md:px-14 
                  overflow-hidden relative 
-                 min-h-[110vh] md:min-h-[100vh] "
+                 min-h-[130vh] md:min-h-[100vh] "
       onMouseEnter={() => setIsHovered(true)}
     >
       {/* Background Blurs */}
@@ -116,52 +116,60 @@ const Hero = () => {
             personalized support.
           </p>
 
-          {/* Users + Stores */}
-          <div className="flex flex-col md:flex-row items-center mt-4 lg:mt-6 justify-center lg:justify-start gap-1 md:gap-2">
-            <div className="flex items-center flex-1">
-              <div className=" flex items-center ml-3">
-                {[p1, p2, p3, p4, p5].map((user, index) => (
-                  <div key={index} className={` -ml-3`}>
-                    <Image
-                      src={user}
-                      alt={`user ${index + 1}`}
-                      className="w-8 h-8  xl:w-12 xl:h-12 object-cover rounded-full border-2 border-white "
-                    />
-                  </div>
-                ))}
-              </div>
-              <div className="ml-2 flex flex-col w-full">
-                <p className="text-secondary text-sm md:text-base font-medium">
-                  1200+
-                </p>
-                <p className="text-secondary text-sm lg:text-base">
-                  Patients are served
-                </p>
-              </div>
+          {/* Users + Stores  */}
+          <div className="relative h-fit w-full rounded-lg overflow-hidden">
+            <div className="absolute inset-0  bg-white/40 backdrop-blur-md z-10">
+              <p className="md:p-4 p-8 text-center text-4xl font-bold">
+                Coming Soon
+              </p>
             </div>
-            <div className="flex gap-4 flex-1 w-fit">
-              <a
-                href="https://play.google.com/store"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img
-                  src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
-                  alt="Get it on Google Play"
-                  className="h-10 md:h-12"
-                />
-              </a>
-              <a
-                href="https://www.apple.com/app-store/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img
-                  src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
-                  alt="Download on the App Store"
-                  className="h-10 md:h-12"
-                />
-              </a>
+
+            <div className="relative z-0 flex flex-col md:flex-row items-center mt-4 lg:mt-6 justify-center lg:justify-start gap-1 md:gap-2 p-2">
+              <div className="flex items-center flex-1">
+                <div className="flex items-center ml-3">
+                  {[p1, p2, p3, p4, p5].map((user, index) => (
+                    <div key={index} className="-ml-3">
+                      <Image
+                        src={user}
+                        alt={`user ${index + 1}`}
+                        className="w-8 h-8 xl:w-12 xl:h-12 object-cover rounded-full border-2 border-white"
+                      />
+                    </div>
+                  ))}
+                </div>
+                <div className="ml-2 flex flex-col w-full">
+                  <p className="text-secondary text-sm md:text-base font-medium">
+                    1200+
+                  </p>
+                  <p className="text-secondary text-sm lg:text-base">
+                    Patients are served
+                  </p>
+                </div>
+              </div>
+              <div className="flex gap-4 flex-1 w-fit">
+                <a
+                  href="https://play.google.com/store"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+                    alt="Get it on Google Play"
+                    className="h-10 md:h-12"
+                  />
+                </a>
+                <a
+                  href="https://www.apple.com/app-store/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
+                    alt="Download on the App Store"
+                    className="h-10 md:h-12"
+                  />
+                </a>
+              </div>
             </div>
           </div>
 
@@ -189,14 +197,15 @@ const Hero = () => {
             </div>
           </div>
 
-          <div className="relative w-full flex justify-center">
+          <div className="relative w-full flex justify-center md:mt-[0%] mt-[18%]">
             {/* Main Image */}
-            <div className="relative w-[95%] h-[55vh] rounded-2xl overflow-hidden md:pt-[25%] lg:mt-[8%]">
+            <div className="relative w-full md:w-[95%] h-[55vh] md:h-[55vh] lg:h-[55vh]  lg:mt-[8%] -mt-[10%] rounded-2xl overflow-hidden">
               <Image
                 src={h1}
                 alt="neurocheck pro"
-                fill
-                className="object-center"
+                height={1000}
+                width={1200}
+                className="object-cover w-full h-full rounded-2xl"
               />
             </div>
 
@@ -248,7 +257,7 @@ const Hero = () => {
 
               {/* Rating Card */}
               <motion.div
-                className="absolute bg-white shadow-lg rounded-xl py-1.5 px-4 md:py-3 md:px-6 z-30"
+                className="absolute bg-white shadow-lg rounded-xl py-1.5 px-2 md:py-3 md:px-6 z-30"
                 style={{
                   top: cardPositions.rating[screenType].top,
                   right: cardPositions.rating[screenType].right,
