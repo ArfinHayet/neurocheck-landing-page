@@ -1,10 +1,15 @@
+import Link from "next/link";
+
 const PrivacyPolicy = () => {
   return (
     <section
-      className="pt-10 pb-24 md:pt-[19vh] md:pb-20 
+      className="pt-10 pb-24 md:pt-[15vh] md:pb-20 
                  max-w-screen mx-auto px-4 md:px-14 
                   relative "
     >
+      <Link href="/">
+        <button className="mb-2 underline cursor-pointer">Back to Home</button>
+      </Link>
       <div className="space-y-2">
         <h1 className=" font-bold text-xl md:text-3xl mb-4">
           Privacy Policy – NeuroCheck Pro
