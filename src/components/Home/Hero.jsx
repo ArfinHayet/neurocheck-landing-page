@@ -13,7 +13,7 @@ import { FaArrowRightLong, FaStar } from "react-icons/fa6";
 import { HiShieldCheck } from "react-icons/hi2";
 import { IoIosArrowRoundForward } from "react-icons/io";
 import h1 from "../../../public/png/WhatsApp Image 2025-09-24 at 1.24.34 PM.jpeg";
-import hero from "../../../public/png/WhatsApp Image 2025-09-26 at 9.59.41 PM.jpeg";
+import hero from "../../../public/png/WhatsApp Image 2025-09-26 at 11.58.57 PM.jpeg";
 
 const Hero = () => {
   const [isHovered, setIsHovered] = useState(false);
