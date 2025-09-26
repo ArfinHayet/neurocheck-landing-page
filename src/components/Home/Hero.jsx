@@ -13,6 +13,7 @@ import { FaArrowRightLong, FaStar } from "react-icons/fa6";
 import { HiShieldCheck } from "react-icons/hi2";
 import { IoIosArrowRoundForward } from "react-icons/io";
 import h1 from "../../../public/png/WhatsApp Image 2025-09-24 at 1.24.34 PM.jpeg";
+import hero from "../../../public/png/WhatsApp Image 2025-09-26 at 9.59.41 PM.jpeg";
 
 const Hero = () => {
   const [isHovered, setIsHovered] = useState(false);
@@ -77,7 +78,7 @@ const Hero = () => {
     rating: {
       mobile: { top: "50%", right: "-4%" },
       tablet: { top: "60%", right: "-16%" },
-      desktop: { bottom: "10%", right: "-7%" },
+      desktop: { bottom: "18%", right: "-5%" },
     },
     care: {
       mobile: { top: "-22%", left: "-3%", transform: "translateX(-50%)" },
@@ -90,7 +91,7 @@ const Hero = () => {
     <section
       id="home"
       className="pt-16 pb-24 md:pt-[19vh] md:pb-20 
-                 max-w-screen mx-auto px-4 md:px-14 
+                 max-w-screen mx-auto px-4 md:px-10 lg::px-14 
                  overflow-hidden relative 
                  min-h-[110vh] md:min-h-[100vh] bg-[#114654]/5"
       onMouseEnter={() => setIsHovered(true)}
@@ -100,17 +101,17 @@ const Hero = () => {
       <div className=" absolute -z-50 top-[50%] md:top-1 right-[-110px] w-[360px] h-[280px] md:w-[860px] md:h-[600px]  bg-[#114654]/25 rounded-full blur-3xl " />
 
       {/* Container */}
-      <div className="flex flex-col md:flex-row justify-center md:justify-start  items-center md:items-start  gap-[10%] xl:gap-[12%]">
+      <div className="flex flex-col md:flex-row justify-center md:justify-start  items-center md:items-start  gap-[8%] xl:gap-[12%]">
         {/* Left Side */}
-        <div className="flex-1  text-center md:text-left mb-4 md:mb-0">
-          <p className="font-medium text-xs md:text-lg uppercase mb-2 xl:mb-2">
+        <div className="flex-1 lg:pt-[4%] text-center md:text-left mb-4 md:mb-0">
+          <p className="font-medium  md:text-2xl  mb-2 xl:mb-2">
             NeuroCheck Pro
           </p>
-          <h1 className="font-bold text-xl md:text-4xl xl:text-5xl w-full md:w-[95%] mb-4 lg:mb-6 leading-tight mx-auto lg:mx-0">
-            Your <span className="text-primary">Neurodiversity </span>Journey,
+          <h1 className="font-bold text-xl  md:text-5xl xl:text-6xl w-full md:w-[95%] mb-4 lg:mb-6 leading-tight mx-auto lg:mx-0">
+            Your <span className="text-primary">NeuroDiversity </span>Journey,
             Simplified
           </h1>
-          <p className="w-full md:max-w-xl text-sm md:text-base lg:max-w-2xl  lg:text-lg text-gray-500 mx-auto lg:mx-0">
+          <p className="w-full md:max-w-xl text-sm md:text-base lg:max-w-2xl  lg:text-lg text-gray-500 mx-auto ">
             A trusted digital platform that connects families with expert
             clinicians for early assessment, professional guidance, and
             personalized support.
@@ -174,34 +175,36 @@ const Hero = () => {
           </div> */}
 
           {/* Button */}
-          <button
+          <div className="flex justify-start">
+           <button
             onClick={handleScroll}
             className="mt-6 lg:mt-8 h-9 md:h-10 lg:h-12 px-3 lg:px-6 py-1.5 lg:py-3 bg-[#0A4863] rounded-full text-white flex items-center justify-center gap-2 hover:bg-primary-dark transition mx-auto lg:mx-0 text-sm md:text-base"
           >
-            Get Diagnosed <IoIosArrowRoundForward size={24} />
-          </button>
+            Get Diagnosed <IoIosArrowRoundForward size={28} />
+            </button>
+          </div>
         </div>
 
         {/* Right Side */}
-        <div className="relative flex-1 flex justify-center items-center mt-4 md:mt-0 min-h-[50vh] md:min-h-0">
+        <div className="relative flex-1 flex justify-center items-center mt-4 md:mt-0 min-h-[80vh] md:min-h-0">
           {/* Orbits  */}
-          <div className="absolute -z-10 -right-2/5 md:-right-[45%] top-1/2 md:top-[65%] lg:top-[62%]  -translate-y-1/2 w-full max-w-[900px] aspect-square flex justify-center items-center">
+          <div className="absolute -z-10 -right-2/5 md:-right-[45%] top-1/2 md:top-[80%] lg:top-[55%] -translate-y-1/2 w-full max-w-[1100px] aspect-square flex justify-center items-center">
             <div className="w-full h-full border border-white rounded-full relative">
               <div className="w-4 h-4 sm:w-6 sm:h-6 border-2 border-white shadow-lg shadow-[#114654] bg-primary rounded-full absolute top-[-1%] left-[55%]" />
             </div>
-            <div className="w-[80%] h-[80%] border border-white rounded-full absolute inset-0 m-auto">
+            <div className="w-[80%] h-[82%] border border-white rounded-full absolute inset-0 m-auto">
               <div className="w-4 h-4 sm:w-6 sm:h-6 border-2 border-white shadow-lg shadow-[#114654] bg-primary rounded-full absolute top-[0%] left-[36%]" />
             </div>
-            <div className="w-[60%] h-[60%] border border-white rounded-full absolute inset-0 m-auto">
+            <div className="w-[60%] h-[64%] border border-white rounded-full absolute inset-0 m-auto">
               <div className="w-4 h-4 sm:w-6 sm:h-6 border-2 border-white shadow-lg shadow-[#114654] bg-primary rounded-full absolute top-[95%] left-[35%]" />
             </div>
           </div>
 
-          <div className="relative w-full flex justify-center md:mt-[0%] mt-[18%]">
+          <div className="relative w-full flex justify-center md:mt-[-7%] mt-[18%]">
             {/* Main Image */}
-            <div className="relative w-full md:w-[95%] h-[40vh] md:h-[55vh] lg:h-[55vh]  lg:mt-[8%] -mt-[10%] rounded-2xl overflow-hidden">
+            <div className="relative w-[85vw] md:w-[95%] h-[40vh] md:h-[55vh] lg:h-[60vh]  lg:mt-[8%] -mt-[10%] rounded-2xl overflow-hidden">
               <Image
-                src={h1}
+                src={hero}
                 alt="neurocheck pro"
                 height={1000}
                 width={1200}
@@ -257,7 +260,7 @@ const Hero = () => {
 
               {/* Rating Card */}
               <motion.div
-                className="absolute bg-white shadow-lg rounded-xl py-1.5 px-2 md:py-3 md:px-6 z-30"
+                className="absolute bg-white shadow-lg rounded-xl py-1.5 px-2 md:py-3 md:px-4 z-30"
                 style={{
                   top: cardPositions.rating[screenType].top,
                   right: cardPositions.rating[screenType].right,

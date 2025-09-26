@@ -4,7 +4,7 @@ import React, { useEffect, useState, useRef } from "react";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { IoCloseOutline } from "react-icons/io5";
 import Image from "next/image";
-import logo from "../../../public/png/Frame_35703-removebg-preview.png";
+import logo from "../../../public/png/NeuroChPro_20250926_191549_0000.png";
 
 const Navbar = () => {
   const [active, setActive] = useState("home");
@@ -68,12 +68,12 @@ const Navbar = () => {
    <div className="fixed top-0 left-0 w-full z-50 bg-transparent">
       <div className="flex items-center justify-start md:justify-between px-6 md:px-12 py-3">
         
-        <div className="flex-1 flex justify-center ms-[30%] md:ms-0 md:justify-start">
+        <div className="flex-1 flex justify-center ms-[30%] md:-ms-2 md:justify-start">
           <Image
             src={logo}
-            height={50}
-            width={180}
-            className="h-8 md:h-14 w-auto"
+            height={400}
+            width={400}
+            className="h-8 md:h-16 w-auto"
             alt="logo"
           />
         </div>

@@ -143,3 +143,35 @@ export const faqData = [
   },
 ];
 
+// src/app/data/teamData.js
+
+export const teamData = [
+  {
+    name: "Tanha Tabassum",
+    title: "Founder & CEO",
+    bio: "Tanha is the founder of NeuroCheck Pro and a purpose-driven entrepreneur with a background in complex fraud investigations at JPMorgan Chase. She has held key leadership roles as a Board Member and Trustee across multiple charitable organisations, including those supporting neurodiverse communities. Combining strategic vision, analytical rigour, and social commitment, she leads NeuroCheck Pro in advancing accessible and impactful health tech solutions.",
+  },
+  {
+    name: "Arshad Ahmed",
+    title: "Co-Founder",
+    bio: "Arshad is a seasoned AI engineering leader with over 15 years of experience across Oil & Gas, Financial Services, and Technology. He has led transformative initiatives in Data Science, Machine Learning, and MLOps, and currently serves as Head of Product, AI Platform at a leading UK bank. As an MLOps World Committee Member, he brings world-class technical expertise and strategic leadership to NeuroCheck Pro.",
+  },
+  {
+    name: "Syed Mainul Islam",
+    title: "Chief Technology Officer (CTO)",
+    bio: "Syed Mainul Islam, Chairman & CEO of mPair Technologies Ltd., brings deep expertise in software, robotics, and IoT solutions. A recognised innovator and leader, he has driven transformative projects across healthcare, education, and business sectors. Known for his pioneering approach and practical innovation, Syed guides NeuroCheck Pro’s technical vision and execution, ensuring world-class, future-ready solutions.",
+  },
+  // {
+  //   name: "",
+  //   title: "Clinician",
+  //   bio: "",
+  // },
+  // {
+  //   name: "",
+  //   title: "Clinician",
+  //   bio: "",
+  // },
+];
+
+
+
