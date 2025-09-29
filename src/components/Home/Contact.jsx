@@ -80,7 +80,7 @@ export default function Contact() {
                 <h3 className=" font-semibold">Email</h3>
               </div>
               <p className="text-sm md:text-lg font-medium">
-                joykraft@gmail.com
+                tanha@neurocheckpro.com
               </p>
             </div>
 

@@ -30,7 +30,7 @@ const PrivacyPolicy = () => {
         </p>
         <p>
           By using our mobile application
-          <span className="font-semibold">NeuroCheck Pro </span>(“App”), you
+          <span className="font-semibold"> NeuroCheck Pro </span>(“App”), you
           consent to the practices described in this policy.
         </p>
       </div>
@@ -39,7 +39,7 @@ const PrivacyPolicy = () => {
         <h1 className="font-bold text-xl">1. Data Controller</h1>
         <p>The data controller responsible for your personal information is:</p>
         <p>
-          <p className="font-semibold">Neuro Check Pro </p>
+          <p className="font-semibold">NeuroCheck Pro </p>
           <p>Email: dev.neurocheckpro@gmail.com </p>
           <p>
             Address: 3rd Floor, 86-90 Paul Street, London, England, United
@@ -326,8 +326,8 @@ const PrivacyPolicy = () => {
         </p>
         <ul className="text-sm list-inside space-y-1">
           <li>
-            <span className="font-semibold">Email: </span>
-            dev.neurocheckpro@gmail.com{" "}
+            <span className="font-semibold"> Email: </span>
+            dev.neurocheckpro@gmail.com {" "}
           </li>
           <li>
             <span className="font-semibold">Address: </span>3rd Floor, 86-90
@@ -337,6 +337,35 @@ const PrivacyPolicy = () => {
             <span className="font-semibold">Phone: </span> +44 7451 248601
           </li>
         </ul>
+      </div>
+      {/* 14 */}
+      <div className="mb-6 space-y-2">
+        <h1 className="font-bold text-xl">14. Account Deletion</h1>
+        <p>
+          You have the right to delete your account and all associated personal
+          data.
+        </p>
+        <p>
+          You can request account deletion directly within the app by going to
+          Settings → Delete Account, or by emailing us at 
+          <a
+            href="mailto:dev.neurocheckpro@gmail.com"
+            className="text-blue-600 hover:underline"
+          >
+            <span> dev.neurocheckpro@gmail.com </span>
+          </a>
+          with the subject line “Delete My Account”.
+        </p>
+        <p>
+          Once your request is verified, your account and related personal
+          information will be permanently deleted from our servers within 30
+          days, unless we are legally required to retain certain records (e.g.,
+          medical or regulatory obligations).
+        </p>
+        <p>
+          After deletion, you will no longer be able to recover your account or
+          associated data.
+        </p>
       </div>
     </section>
   );

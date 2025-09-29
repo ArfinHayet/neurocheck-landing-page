@@ -158,18 +158,18 @@ export const teamData = [
   },
   {
     name: "Syed Mainul Islam",
-    title: "Chief Technology Officer (CTO)",
+    title: "Chief Technology Officer",
     bio: "Syed Mainul Islam, Chairman & CEO of mPair Technologies Ltd., brings deep expertise in software, robotics, and IoT solutions. A recognised innovator and leader, he has driven transformative projects across healthcare, education, and business sectors. Known for his pioneering approach and practical innovation, Syed guides NeuroCheck Pro’s technical vision and execution, ensuring world-class, future-ready solutions.",
   },
   // {
   //   name: "",
   //   title: "Clinician",
-  //   bio: "",
+  //   bio: "Will be added soon",
   // },
   // {
   //   name: "",
   //   title: "Clinician",
-  //   bio: "",
+  //   bio: "Will be added soon",
   // },
 ];
 

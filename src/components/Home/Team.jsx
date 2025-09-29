@@ -19,7 +19,7 @@ const Team = () => {
   return (
     <section
       id="meetourteam"
-      className="max-w-screen lg:h-[90vh] mx-auto py-14 md:py-20 px-4 sm:px-6 md:px-10 lg:px-18 bg-[#114654]/5 "
+      className="max-w-screen lg:h-[90vh] mx-auto  md:py-20 px-4 sm:px-6 md:px-10 lg:px-18 bg-[#114654]/5 "
     >
       <div className="mb-6 md:mb-16 flex flex-col items-center justify-center text-center">
         <h1 className="font-bold text-center text-xl md:text-2xl lg:text-4xl">
@@ -27,11 +27,11 @@ const Team = () => {
         </h1>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-5 md:gap-4 px-3 md:px-0 ">
+      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-2 md:gap-3 md:px-0 ">
         {teamData.map((member, idx) => (
           <div
             key={idx}
-            className="flex flex-col items-center text-center p-6 lg:h-auto md:h-[55vh] w-full bg-white rounded-2xl "
+            className="flex flex-col items-center text-center p-4 lg:h-auto md:h-[55vh] w-full bg-white rounded-2xl "
           >
             {/* Image */}
             <Image
@@ -39,32 +39,32 @@ const Team = () => {
               alt={member.name}
               width={128}
               height={128}
-              className="w-24 h-24 lg:w-32 lg:h-32 rounded-full object-cover border-2 lg:border-4 border-[#114654]/20 mb-4"
+              className="w-24 h-24 lg:w-28 lg:h-28 rounded-full object-cover border-2 lg:border-4 border-[#114654]/20 mb-2"
             />
 
             {/* Name & Designation */}
-            <h2 className="font-bold text-base md:text-lg lg:text-xl">
+            <h2 className="font-bold text-base md:text-base xl:text-xl">
               {member.name}
             </h2>
-            <p className="text-xs lg:text-sm text-gray-600 mb-3">
+            <p className="text-xs xl:text-sm text-gray-600 mb-3">
               {member.title}
             </p>
 
             {/* Responsive Bio */}
             <p className="block sm:hidden text-xs text-gray-500 leading-relaxed">
-              {sliceText(member.bio, 40)}
+              {sliceText(member.bio, 80)}
             </p>
             <p className="hidden sm:block lg:hidden text-xs text-gray-500 leading-relaxed">
-              {sliceText(member.bio, 74)}
+              {sliceText(member.bio, 85)}
             </p>
-            <p className="hidden lg:block text-sm text-gray-500 leading-relaxed">
+            <p className="hidden lg:block text-xs text-gray-500 leading-relaxed">
               {sliceText(member.bio, 85)}
             </p>
 
             {/* Read More Button */}
             <button
               onClick={() => setSelectedMember({ ...member, img: images[idx] })}
-              className="mt-3 underline  text-[#114654 rounded-lg text-xs md:text-sm"
+              className="lg:mt-2 underline  text-[#114654] rounded-lg text-xs xl:text-sm"
             >
               Read More
             </button>
@@ -72,13 +72,13 @@ const Team = () => {
         ))}
 
         {/* Blank Cards */}
-        <div className="flex flex-col items-center text-center justify-center p-6 lg:h-[50vh] md:h-[55vh] w-full bg-white rounded-2xl ">
-          <p className="font-bold text-lg md:text-xl mb-3">Clinician</p>
-          <p className="text-gray-500">Coming Soon</p>
+        <div className="flex flex-col items-center text-center justify-center p-6  md:h-[52vh] xl:h-[45vh] w-full bg-white rounded-2xl ">
+          <p className="font-bold text-lg xl:text-xl ">Clinician</p>
+          <p className="text-gray-500 text-sm">Will be added soon</p>
         </div>
-        <div className="flex flex-col items-center text-center justify-center p-6 lg:h-[50vh] md:h-[55vh] w-full bg-white rounded-2xl ">
-          <p className="font-bold text-lg md:text-xl mb-3">Clinician</p>
-          <p className="text-gray-500">Coming Soon</p>
+        <div className="flex flex-col items-center text-center justify-center p-6 md:h-[52vh] xl:h-[45vh] w-full bg-white rounded-2xl ">
+          <p className="font-bold text-lg xl:text-xl ">Clinician</p>
+          <p className="text-gray-500 text-sm">Will be added soon</p>
         </div>
       </div>
 

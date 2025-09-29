@@ -18,6 +18,7 @@ export default function page() {
       <Hero />
       <Team />
       <ComingSoon />
+     
       {/* <HowItWorks />
       <PowerfulFeatures />
       <FlexiblePricing />
@@ -25,7 +26,7 @@ export default function page() {
       <FAQ />
       <ExpertClinicians />
       <AboutUs />
-      <Contact />
+       <Contact />
       <Footer /> */}
     </>
   );

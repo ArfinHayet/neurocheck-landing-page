@@ -90,23 +90,23 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="pt-16 pb-24 md:pt-[19vh] md:pb-20 
+      className="pt-24 pb-10 md:pt-[19vh] md:pb-20 
                  max-w-screen mx-auto px-4 md:px-10 lg::px-14 
                  overflow-hidden relative 
-                 min-h-[110vh] md:min-h-[100vh] bg-[#114654]/5"
+                   bg-[#114654]/5"
       onMouseEnter={() => setIsHovered(true)}
     >
       {/* Background Blurs */}
-      <div className=" absolute -z-50 top-[-120px] left-[-90px] w-[450px] h-[450px] sm:w-[600px] sm:h-[600px] md:w-[860px] md:h-[780px] bg-[#F8D2D3]/40 rounded-full blur-3xl " />
-      <div className=" absolute -z-50 top-[50%] md:top-1 right-[-110px] w-[360px] h-[280px] md:w-[860px] md:h-[600px]  bg-[#114654]/25 rounded-full blur-3xl " />
+      <div className=" absolute -z-50 top-[-120px] left-[-90px] w-[450px] h-[450px] sm:w-[600px] sm:h-[600px] md:w-[860px] md:h-[660px] xl:w-[900px] xl:h-[700px]  bg-[#F8D2D3]/30 rounded-full blur-3xl " />
+      <div className=" absolute -z-50 top-[50%] md:top-1 right-[-110px] w-[360px] h-[280px] md:w-[700px] md:h-[500px] xl:w-[740px] xl:h-[560px]  bg-[#114654]/20 rounded-full blur-3xl " />
 
       {/* Container */}
-      <div className="flex flex-col md:flex-row justify-center md:justify-start  items-center md:items-start  gap-[8%] xl:gap-[12%]">
+      <div className="flex flex-col md:flex-row justify-center md:justify-start  items-center md:items-start  gap-[4%] xl:gap-[12%]">
         {/* Left Side */}
         <div className="flex-1 lg:pt-[4%] text-center md:text-left mb-4 md:mb-0">
-          <p className="font-medium  md:text-2xl  mb-2 xl:mb-2">
+          {/* <p className="font-medium  md:text-2xl  mb-2 xl:mb-2">
             NeuroCheck Pro
-          </p>
+          </p> */}
           <h1 className="font-bold text-xl  md:text-5xl xl:text-6xl w-full md:w-[95%] mb-4 lg:mb-6 leading-tight mx-auto lg:mx-0">
             Your <span className="text-primary">NeuroDiversity </span>Journey,
             Simplified
@@ -176,19 +176,19 @@ const Hero = () => {
 
           {/* Button */}
           <div className="flex justify-start">
-           <button
-            onClick={handleScroll}
-            className="mt-6 lg:mt-8 h-9 md:h-10 lg:h-12 px-3 lg:px-6 py-1.5 lg:py-3 bg-[#0A4863] rounded-full text-white flex items-center justify-center gap-2 hover:bg-primary-dark transition mx-auto lg:mx-0 text-sm md:text-base"
-          >
-            Get Diagnosed <IoIosArrowRoundForward size={28} />
+            <button
+              onClick={handleScroll}
+              className="mt-6 lg:mt-8 h-9 md:h-10 lg:h-12 px-3 lg:px-6 py-1.5 lg:py-3 bg-[#0A4863] rounded-full text-white flex items-center justify-center gap-2 hover:bg-primary-dark transition mx-auto lg:mx-0 text-sm md:text-base"
+            >
+              Get Diagnosed <IoIosArrowRoundForward size={28} />
             </button>
           </div>
         </div>
 
         {/* Right Side */}
-        <div className="relative flex-1 flex justify-center items-center mt-4 md:mt-0 min-h-[80vh] md:min-h-0">
+        <div className="relative flex-1 flex justify-center items-center  ">
           {/* Orbits  */}
-          <div className="absolute -z-10 -right-2/5 md:-right-[45%] top-1/2 md:top-[80%] lg:top-[55%] -translate-y-1/2 w-full max-w-[1100px] aspect-square flex justify-center items-center">
+          <div className="absolute -z-10 -right-2/5 md:-right-[45%] top-1/2 md:top-[80%] lg:top-[64%] -translate-y-1/2 w-full max-w-[1100px] aspect-square flex justify-center items-center">
             <div className="w-full h-full border border-white rounded-full relative">
               <div className="w-4 h-4 sm:w-6 sm:h-6 border-2 border-white shadow-lg shadow-[#114654] bg-primary rounded-full absolute top-[-1%] left-[55%]" />
             </div>
@@ -215,7 +215,7 @@ const Hero = () => {
             {/* Floating Cards */}
             <div>
               {/* Advantages */}
-              <motion.div
+              {/* <motion.div
                 className="absolute bg-white shadow-md rounded-xl z-30"
                 style={{
                   top: cardPositions.advantages[screenType].top,
@@ -256,10 +256,10 @@ const Hero = () => {
                     </span>
                   </li>
                 </ul>
-              </motion.div>
+              </motion.div> */}
 
               {/* Rating Card */}
-              <motion.div
+              {/* <motion.div
                 className="absolute bg-white shadow-lg rounded-xl py-1.5 px-2 md:py-3 md:px-4 z-30"
                 style={{
                   top: cardPositions.rating[screenType].top,
@@ -281,10 +281,10 @@ const Hero = () => {
                 <p className="text-gray-600 text-xs md:text-base lg:text-lg">
                   Secure & Confidential
                 </p>
-              </motion.div>
+              </motion.div> */}
 
               {/* Personalised Care Card */}
-              <motion.div
+              {/* <motion.div
                 className="absolute bg-white shadow-lg rounded-xl p-2 md:px-3 md:py-2 z-30 flex justify-center items-center gap-2 xl:gap-4"
                 style={{
                   top: cardPositions.care[screenType].top,
@@ -307,7 +307,7 @@ const Hero = () => {
                 <p className="text-secondary text-xs md:text-sm xl:text-lg">
                   Personalised Care Pathways
                 </p>
-              </motion.div>
+              </motion.div> */}
             </div>
           </div>
         </div>
